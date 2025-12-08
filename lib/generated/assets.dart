@@ -7,6 +7,7 @@ class Assets {
   static const String fontsInter18ptRegular = 'assets/fonts/Inter_18pt-Regular.ttf';
   static const String fontsInter18ptSemiBold = 'assets/fonts/Inter_18pt-SemiBold.ttf';
   static const String imagesOnboardingDoctor = 'assets/images/onboarding_doctor.png';
+  static const String imagesScreen = 'assets/images/splash.png';
   static const String svgBackgroundLogo = 'assets/svg/background_logo.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
 
