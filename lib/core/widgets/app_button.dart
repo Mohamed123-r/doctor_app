@@ -2,18 +2,20 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class LargeButton extends StatelessWidget {
-  const LargeButton({
+class AppButton extends StatelessWidget {
+  const AppButton({
     super.key,
     required this.title,
     this.isSecondary = false,
     required this.onPressed,
+    this.isLoading = false,
   });
 
   final String title;
 
   final VoidCallback onPressed;
   final bool isSecondary;
+  final bool isLoading ;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,13 @@ class LargeButton extends StatelessWidget {
 
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Text(
+      child:
+        isLoading ? CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(
+            isSecondary ? AppColors.primary100 : AppColors.white,
+          ),
+        ) :
+      Text(
         title,
         style: AppTextStyles.semibold16(
           context,
