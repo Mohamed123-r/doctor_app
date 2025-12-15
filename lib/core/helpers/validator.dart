@@ -41,6 +41,15 @@ String? validatorOfPassword(context, String? value) {
     }
   }
 }
+String? validatorOfPhone (context, String? value) {
+  if (value == null || value.isEmpty) {
+    return "Please enter your phone number";
+  } else if (!RegExp(r'^[0-9]{10,15}$').hasMatch(value)) {
+    return "Please enter a valid phone number";
+  } else {
+    return null;
+  }
+}
 
 String? validatorOfName(context, String? value) {
   if (value == null || value.isEmpty) {
