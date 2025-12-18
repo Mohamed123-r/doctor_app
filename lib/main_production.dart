@@ -3,12 +3,11 @@ import 'package:doctor_app/doctor_app.dart';
 import 'package:flutter/material.dart';
 
 import 'core/di/dependency_injection.dart';
-import 'core/helpers/constants.dart';
-import 'core/helpers/shared_pref_helper.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
+
 
   //await checkIfLoggedInUser();
   runApp(DoctorApp(
