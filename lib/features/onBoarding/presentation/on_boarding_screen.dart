@@ -1,8 +1,8 @@
-import 'package:doctor_app/core/helpers/extenstion.dart';
+import 'package:doctor_app/core/helpers/navigation_extension.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
-import 'package:doctor_app/core/widgets/large_button.dart';
+import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:doctor_app/core/widgets/logo_and_name_app.dart';
 import 'package:doctor_app/features/onBoarding/presentation/widgets/image_and_text_in_on_boarding.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class OnBoardingScreen extends StatelessWidget {
                       ).copyWith(color: AppColors.body),
                     ),
                     const SizedBox(height: 30),
-                    LargeButton(title: 'Get Started', onPressed: () {
+                    AppButton(title: 'Get Started', onPressed: () {
                       context.pushReplacementNamed(Routes.login);
                     }),
                   ],

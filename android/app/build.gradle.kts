@@ -19,6 +19,29 @@ android {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+
+    flavorDimensions += "default"
+    productFlavors {
+        create("development") {
+            dimension = "default"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "doctor App Development"
+            )
+            applicationIdSuffix = ".development"
+        }
+        create("production") {
+            dimension = "default"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "doctor App"
+            )
+            applicationIdSuffix = ".production"
+        }
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.doctor_app"
