@@ -43,6 +43,11 @@ jobs:
           bundler-cache: true
           working-directory: android
 
+
+      - name: Force Gradle to use Java 17
+        run: |
+          echo "org.gradle.java.home=$JAVA_HOME" >> android/gradle.properties
+
       # 6️⃣ Build & Distribute
       - name: Build and Distribute App
         working-directory: android
