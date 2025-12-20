@@ -1,4 +1,4 @@
-name: Android Fastlane with Firebase App Distribution Workflow
+name: Android Fastlane with Firebase App Distribution
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Java 17 (الخطوة اللي كانت ناقصة)
+      # 2️⃣ Java 17 (الأساسي)
       - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
@@ -22,20 +22,20 @@ jobs:
           java-version: 17
           cache: gradle
 
-      # 3️⃣ Install Flutter
+      # 3️⃣ Flutter
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
-      # 4️⃣ تأكيد إن Flutter بيستخدم Java 17
+      # 4️⃣ ربط Flutter بـ Java 17
       - name: Configure Flutter Java
         run: |
           flutter config --jdk-dir="$JAVA_HOME"
           flutter doctor -v
 
-      # 5️⃣ Setup Ruby + Bundler
+      # 5️⃣ Ruby + Bundler
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -43,20 +43,17 @@ jobs:
           bundler-cache: true
           working-directory: android
 
-
-      - name: Force Gradle to use Java 17
+      # 6️⃣ تأكيد Java (Debug)
+      - name: Check Java
         run: |
-          echo "org.gradle.java.home=$JAVA_HOME" >> android/gradle.properties
+          echo "JAVA_HOME=$JAVA_HOME"
+          java -version
 
-      # 6️⃣ Build & Distribute
+      # 7️⃣ Build & Firebase Distribution
       - name: Build and Distribute App
         working-directory: android
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-          JAVA_HOME: ${{ env.JAVA_HOME }}
-          PATH: ${{ env.JAVA_HOME }}/bin:${{ env.PATH }}
         run: |
-          java -version
-          flutter doctor -v
           bundle exec fastlane android distribute_to_firebase
