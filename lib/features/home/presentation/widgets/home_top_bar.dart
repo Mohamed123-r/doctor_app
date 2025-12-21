@@ -9,32 +9,40 @@ class HomeTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hi, Omar!',
-              style: AppTextStyles.bold18(
-                context,
-              ).copyWith(color: AppColors.grey100),
-            ),
-            Text(
-              'How Are you Today?',
-              style: AppTextStyles.regular12(
-                context,
-              ).copyWith(color: AppColors.grey80),
-            ),
-          ],
-        ),
-        CircleAvatar(
-          radius: 24,
-          backgroundColor: AppColors.grey20,
-          child: SvgPicture.asset(Assets.svgNotivication),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 16.0,
+        right: 16.0,
+        top: 16.0,
+
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi, Omar!',
+                style: AppTextStyles.bold18(
+                  context,
+                ).copyWith(color: AppColors.grey100),
+              ),
+              Text(
+                'How Are you Today?',
+                style: AppTextStyles.regular12(
+                  context,
+                ).copyWith(color: AppColors.grey80),
+              ),
+            ],
+          ),
+          CircleAvatar(
+            radius: 24,
+            backgroundColor: AppColors.grey20,
+            child: SvgPicture.asset(Assets.svgNotivication),
+          ),
+        ],
+      ),
     );
   }
 }
