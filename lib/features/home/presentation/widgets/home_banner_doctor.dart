@@ -10,50 +10,55 @@ class HomeBannerDoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 205,
+      height: 215,
       width: double.infinity,
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 180,
-              width: double.infinity,
-              padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(Assets.imagesHomeBanner),
-                  fit: BoxFit.cover,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16.0,
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 190,
+                width: double.infinity,
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(Assets.imagesHomeBanner),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(16),
                 ),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Book and\nschedule with\nnearest doctor',
-                    style: AppTextStyles.medium20(
-                      context,
-                    ).copyWith(color: AppColors.white),
-                  ),
-                  const SizedBox(height: 8),
-                  AppButton(
-                    isSecondary: true,
-                    isMin: true,
-                    title: "Find Nearby",
-                    onPressed: () {},
-                  ),
-                ],
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Book and\nschedule with\nnearest doctor',
+                      style: AppTextStyles.medium20(
+                        context,
+                      ).copyWith(color: AppColors.white),
+                    ),
+                    const SizedBox(height: 8),
+                    AppButton(
+                      isSecondary: true,
+                      isMin: true,
+                      title: "Find Nearby",
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          Positioned(
-            right: 15,
-            bottom: 0,
-            child: Image.asset(Assets.imagesBannerImage, height: 205),
-          ),
-        ],
+            Positioned(
+              right: 15,
+              bottom: 0,
+              child: Image.asset(Assets.imagesBannerImage, height: 215),
+            ),
+          ],
+        ),
       ),
     );
   }

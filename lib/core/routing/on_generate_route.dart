@@ -1,5 +1,6 @@
 import 'package:doctor_app/core/di/dependency_injection.dart';
 import 'package:doctor_app/core/routing/routes.dart';
+import 'package:doctor_app/features/home/presentation/cubits/specializations_cubit.dart';
 import 'package:doctor_app/features/home/presentation/home_screen.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/logIn/presentation/login_screen.dart';
@@ -10,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
@@ -29,13 +30,15 @@ class AppRouter {
           ),
         );
       case Routes.home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SpecializationsCubit>()..fetchSpecializations(),
+            child: HomeScreen(),
+          ),
+        );
 
       default:
-        return MaterialPageRoute(
-          builder: (_) =>
-              Scaffold(body: Center(child: Text('No route defined '))),
-        );
+        return null;
     }
   }
 }
