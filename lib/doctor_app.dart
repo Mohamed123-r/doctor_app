@@ -12,17 +12,12 @@ class DoctorApp extends StatelessWidget {
       MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Doctor App',
-        theme: ThemeData(
-          primaryColor: AppColors.primary100,
-          scaffoldBackgroundColor: AppColors.backgroundWhite,
-          fontFamily: 'Inter',
-
-
-
-
-
-        ),
-        initialRoute: Routes.onboarding  ,
+      theme: ThemeData(
+        primaryColor: AppColors.primary100,
+        scaffoldBackgroundColor: AppColors.backgroundWhite,
+        fontFamily: 'Inter',
+      ),
+        initialRoute: Routes.home  ,
         onGenerateRoute: appRouter.onGenerateRoute,
       );
   }
