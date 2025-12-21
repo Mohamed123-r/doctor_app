@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/home_banner_doctor.dart';
 import 'widgets/home_top_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           padding: const EdgeInsets.all(16.0),
-          child: Column(children: [HomeTopBar()]),
+          child: Column(children: [HomeTopBar(), HomeBannerDoctor()]),
         ),
       ),
     );
