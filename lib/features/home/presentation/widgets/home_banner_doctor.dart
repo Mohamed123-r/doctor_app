@@ -10,14 +10,14 @@ class HomeBannerDoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 185,
+      height: 205,
       width: double.infinity,
       child: Stack(
         children: [
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 160,
+              height: 180,
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
@@ -38,13 +38,11 @@ class HomeBannerDoctor extends StatelessWidget {
                     ).copyWith(color: AppColors.white),
                   ),
                   const SizedBox(height: 8),
-                  Expanded(
-                    child: AppButton(
-                      isSecondary: true,
-                      isMin: true,
-                      title: "Find Nearby",
-                      onPressed: () {},
-                    ),
+                  AppButton(
+                    isSecondary: true,
+                    isMin: true,
+                    title: "Find Nearby",
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -53,7 +51,7 @@ class HomeBannerDoctor extends StatelessWidget {
           Positioned(
             right: 15,
             bottom: 0,
-            child: Image.asset(Assets.imagesBannerImage, height: 185),
+            child: Image.asset(Assets.imagesBannerImage, height: 205),
           ),
         ],
       ),
