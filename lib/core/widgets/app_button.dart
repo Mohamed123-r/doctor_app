@@ -8,7 +8,7 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.isSecondary = false,
     required this.onPressed,
-    this.isLoading = false,
+    this.isLoading = false,  this.isMin = false,
   });
 
   final String title;
@@ -16,20 +16,24 @@ class AppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isSecondary;
   final bool isLoading ;
+  final bool isMin ;
+
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
       color: isSecondary ? AppColors.white : AppColors.primary100,
-      height: 56,
-      minWidth: MediaQuery.sizeOf(context).width,
+      height: isMin ? 40 : 56,
+      minWidth: isMin ? 150 : double.infinity,
       shape: RoundedRectangleBorder(
         side: isSecondary
             ? BorderSide(color: AppColors.primary100)
             : BorderSide.none,
 
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(
+            isMin ? 32 : 16),
       ),
       child:
         isLoading ? CircularProgressIndicator(
@@ -39,7 +43,12 @@ class AppButton extends StatelessWidget {
         ) :
       Text(
         title,
-        style: AppTextStyles.semibold16(
+        style:
+        isMin ? AppTextStyles.medium14(
+          context,
+        ).copyWith(color: isSecondary ? AppColors.primary100 : AppColors.white) :
+
+        AppTextStyles.semibold16(
           context,
         ).copyWith(color: isSecondary ? AppColors.primary100 : AppColors.white),
       ),

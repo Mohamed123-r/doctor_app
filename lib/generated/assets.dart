@@ -6,9 +6,12 @@ class Assets {
   static const String fontsInter18ptMedium = 'assets/fonts/Inter_18pt-Medium.ttf';
   static const String fontsInter18ptRegular = 'assets/fonts/Inter_18pt-Regular.ttf';
   static const String fontsInter18ptSemiBold = 'assets/fonts/Inter_18pt-SemiBold.ttf';
+  static const String imagesBannerImage = 'assets/images/banner_image.png';
+  static const String imagesHomeBanner = 'assets/images/home_banner.png';
   static const String imagesOnboardingDoctor = 'assets/images/onboarding_doctor.png';
-  static const String imagesScreen = 'assets/images/splash.png';
+  static const String imagesSplash = 'assets/images/splash.png';
   static const String svgBackgroundLogo = 'assets/svg/background_logo.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
+  static const String svgNotivication = 'assets/svg/notivication.svg';
 
 }
