@@ -19,9 +19,9 @@ class SpecializationsCubit extends Cubit<SpecializationsState> {
           specializationsResponseModel: data,
         ));
       },
-      failure: (error) {
+      failure: (apiErrorModel) {
         emit(SpecializationsState.error(
-          message: error.apiErrorModel.message!,
+          apiErrorModel: apiErrorModel
         ));
       },
     );

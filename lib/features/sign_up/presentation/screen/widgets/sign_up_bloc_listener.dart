@@ -29,7 +29,7 @@ class SignUpBlocListener extends StatelessWidget {
             context.pushNamed(Routes.home);
           },
           failure: (error) {
-            errorDialog(context, massage: error);
+            errorDialog(context, massage: error.getAllErrorMessages());
           },
         );
       },

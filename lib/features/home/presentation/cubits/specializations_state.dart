@@ -1,3 +1,4 @@
+import 'package:doctor_app/core/networking/api_error_model.dart';
 import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'specializations_state.freezed.dart';
@@ -9,7 +10,7 @@ part 'specializations_state.freezed.dart';
     required SpecializationsResponseModel specializationsResponseModel,
   }) = SpecializationsLoaded;
   const factory SpecializationsState.error({
-    required String message,
+    required ApiErrorModel apiErrorModel,
   }) = SpecializationsError;
 }
 

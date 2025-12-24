@@ -37,7 +37,7 @@ class LoginBlocListener extends StatelessWidget {
           error: (error) {
             errorDialog(
               context,
-              massage: error,
+              massage: error.getAllErrorMessages(),
             );
           },
         );
