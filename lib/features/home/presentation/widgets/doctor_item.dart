@@ -23,7 +23,9 @@ class DoctorItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Image.asset(
-              Assets.imagesBannerImage,
+              doctor!.gender == "male"
+                  ? Assets.imagesOnboardingDoctor
+                  : Assets.imagesBannerImage,
               width: 110,
               height: 150,
             ),

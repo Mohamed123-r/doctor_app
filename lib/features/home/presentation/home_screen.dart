@@ -1,3 +1,4 @@
+import 'package:doctor_app/features/home/presentation/widgets/doctor_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'widgets/home_banner_doctor.dart';
 import 'widgets/home_top_bar.dart';
@@ -19,7 +20,9 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 12),
               HomeBannerDoctor(),
               SizedBox(height: 32),
-              Expanded(child: SpecializationsBlocBuilder()),
+              SpecializationsBlocBuilder(),
+              SizedBox(height: 32),
+              DoctorBlocBuilder(),
             ],
           ),
         ),

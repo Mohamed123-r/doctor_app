@@ -1,16 +1,29 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
-import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
+import 'package:doctor_app/features/home/presentation/widgets/speciality_item.dart';
 import 'package:flutter/material.dart';
-import 'speciality_item.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../data/models/specializations_response_model.dart';
+import '../cubits/specializations_cubit.dart';
 
-class SpecialitySection extends StatelessWidget {
-  const SpecialitySection({super.key, required this.specializationsList});
+class SpecialitySection extends StatefulWidget {
+  const SpecialitySection({super.key, required this.specializationDataList});
 
-  final SpecializationsResponseModel specializationsList;
+  final List<SpecializationsData?> specializationDataList;
+
+  @override
+  State<SpecialitySection> createState() => _SpecialitySectionState();
+}
+
+class _SpecialitySectionState extends State<SpecialitySection> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    final list = widget.specializationDataList;
+
+    if (list.isEmpty) return const SizedBox.shrink();
+
     return Column(
       children: [
         Padding(
@@ -24,12 +37,6 @@ class SpecialitySection extends StatelessWidget {
                   context,
                 ).copyWith(color: AppColors.grey100),
               ),
-              Text(
-                'See All',
-                style: AppTextStyles.regular12(
-                  context,
-                ).copyWith(color: AppColors.primary100),
-              ),
             ],
           ),
         ),
@@ -38,28 +45,28 @@ class SpecialitySection extends StatelessWidget {
           height: 85,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            itemCount: list.length,
+            separatorBuilder: (context, index) => const SizedBox(width: 24),
             itemBuilder: (context, index) {
-              var speciality =
-                  specializationsList.specializationDataList![index];
-
-              return Padding(
-                padding: EdgeInsets.only(
-                  left: index == 0 ? 16.0 : 0.0,
-                  right:
-                      index ==
-                          specializationsList.specializationDataList!.length - 1
-                      ? 16.0
-                      : 0.0,
+              final speciality = list[index];
+              return GestureDetector(
+                onTap: () {
+                  setState(() => selectedIndex = index);
+                  context.read<SpecializationsCubit>().getDoctorsList(
+                    specializationId: speciality?.id,
+                  );
+                },
+                child: SpecialityItem(
+                  speciality: speciality,
+                  itemIndex: index,
+                  selectedIndex: selectedIndex,
                 ),
-                child: SpecialityItem(speciality: speciality),
               );
             },
-            separatorBuilder: (context, index) => const SizedBox(width: 16),
-            itemCount: specializationsList.specializationDataList!.length,
           ),
         ),
       ],
     );
   }
 }
-
