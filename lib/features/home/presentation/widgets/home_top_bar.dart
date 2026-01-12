@@ -1,3 +1,4 @@
+import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
@@ -10,12 +11,7 @@ class HomeTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 16.0,
-        right: 16.0,
-        top: 16.0,
-
-      ),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -36,10 +32,20 @@ class HomeTopBar extends StatelessWidget {
               ),
             ],
           ),
-          CircleAvatar(
-            radius: 24,
-            backgroundColor: AppColors.grey20,
-            child: SvgPicture.asset(Assets.svgNotivication),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.profile);
+            },
+            child: CircleAvatar(
+              radius: 24,
+              backgroundColor: AppColors.grey20,
+              child: SvgPicture.asset(
+                Assets.svgProfile,
+                width: 24,
+                height: 24,
+                color: AppColors.grey100,
+              ),
+            ),
           ),
         ],
       ),

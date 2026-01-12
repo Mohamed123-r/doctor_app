@@ -5,6 +5,7 @@ import 'package:doctor_app/features/home/presentation/home_screen.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/logIn/presentation/login_screen.dart';
 import 'package:doctor_app/features/onBoarding/presentation/on_boarding_screen.dart';
+import 'package:doctor_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:doctor_app/features/sign_up/presentation/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,10 @@ class AppRouter {
             create: (context) => getIt<SpecializationsCubit>()..fetchSpecializations(),
             child: HomeScreen(),
           ),
+        );
+      case Routes.profile:
+        return MaterialPageRoute(
+          builder: (_) => ProfileScreen(),
         );
 
       default:
