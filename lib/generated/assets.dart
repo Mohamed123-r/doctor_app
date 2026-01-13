@@ -6,9 +6,21 @@ class Assets {
   static const String fontsInter18ptMedium = 'assets/fonts/Inter_18pt-Medium.ttf';
   static const String fontsInter18ptRegular = 'assets/fonts/Inter_18pt-Regular.ttf';
   static const String fontsInter18ptSemiBold = 'assets/fonts/Inter_18pt-SemiBold.ttf';
+  static const String imagesBannerImage = 'assets/images/banner_image.png';
+  static const String imagesDocotr = 'assets/images/docotr.png';
+  static const String imagesHomeBanner = 'assets/images/home_banner.png';
   static const String imagesOnboardingDoctor = 'assets/images/onboarding_doctor.png';
-  static const String imagesScreen = 'assets/images/splash.png';
+  static const String imagesProfile = 'assets/images/profile.png';
+  static const String imagesSplash = 'assets/images/splash.png';
   static const String svgBackgroundLogo = 'assets/svg/background_logo.svg';
+  static const String svgDirectboxNotif = 'assets/svg/directbox-notif.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
+  static const String svgDoctor = 'assets/svg/Doctor.svg';
+  static const String svgEdit = 'assets/svg/edit.svg';
+  static const String svgNotivication = 'assets/svg/notivication.svg';
+  static const String svgPersonalcard = 'assets/svg/personalcard.svg';
+  static const String svgProfile = 'assets/svg/Profile.svg';
+  static const String svgSetting = 'assets/svg/setting.svg';
+  static const String svgWallet = 'assets/svg/wallet.svg';
 
 }

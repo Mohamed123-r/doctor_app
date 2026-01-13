@@ -1,5 +1,7 @@
+import 'package:doctor_app/core/helpers/constants.dart';
 import 'package:doctor_app/core/helpers/custom_error.dart';
 import 'package:doctor_app/core/helpers/navigation_extension.dart';
+import 'package:doctor_app/core/helpers/shared_pref_helper.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dart';
@@ -20,10 +22,14 @@ class SignUpBlocListener extends StatelessWidget {
         state.whenOrNull(
           success: (data) async {
             await successDialog(context, massage: "Add Account Successful");
+         await    SharedPrefHelper.setSecuredString(
+              SharedPrefKeys.userToken,
+              data.data.token,
+            );
             context.pushNamed(Routes.home);
           },
           failure: (error) {
-            errorDialog(context, massage: error);
+            errorDialog(context, massage: error.getAllErrorMessages());
           },
         );
       },

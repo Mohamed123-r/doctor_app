@@ -1,5 +1,7 @@
+import 'package:doctor_app/core/helpers/constants.dart';
 import 'package:doctor_app/core/helpers/custom_error.dart';
 import 'package:doctor_app/core/helpers/navigation_extension.dart';
+import 'package:doctor_app/core/helpers/shared_pref_helper.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_state.dart';
@@ -26,12 +28,16 @@ class LoginBlocListener extends StatelessWidget {
               context,
               massage: "Login Successful",
             );
+            await   SharedPrefHelper.setSecuredString(
+              SharedPrefKeys.userToken,
+              data.data.token,
+            );
             context.pushNamed(Routes.home);
           },
           error: (error) {
             errorDialog(
               context,
-              massage: error,
+              massage: error.getAllErrorMessages(),
             );
           },
         );
