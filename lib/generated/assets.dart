@@ -24,6 +24,7 @@ class Assets {
   static const String svgNotivication = 'assets/svg/notivication.svg';
   static const String svgPersonalcard = 'assets/svg/personalcard.svg';
   static const String svgProfile = 'assets/svg/Profile.svg';
+  static const String svgSearchNormal = 'assets/svg/search-normal.svg';
   static const String svgSetting = 'assets/svg/setting.svg';
   static const String svgWallet = 'assets/svg/wallet.svg';
 

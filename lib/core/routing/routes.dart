@@ -7,4 +7,5 @@ class Routes {
   static const String profile = '/profile';
   static const String profileInformation = '/profileInformation';
   static const String setting = '/setting';
+  static const String FAQ = '/FAQ';
 }

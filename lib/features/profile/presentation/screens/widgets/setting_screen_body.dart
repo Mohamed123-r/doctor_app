@@ -1,3 +1,5 @@
+import 'package:doctor_app/core/helpers/navigation_extension.dart';
+import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'build_setting_item.dart';
@@ -16,7 +18,13 @@ class SettingScreenBody extends StatelessWidget {
           title: 'Notifications',
           onTap: () {},
         ),
-        BuildSettingItem(icon: Assets.svgFAQ, title: 'FAQ', onTap: () {}),
+        BuildSettingItem(
+          icon: Assets.svgFAQ,
+          title: 'FAQ',
+          onTap: () {
+            context.pushNamed(Routes.FAQ);
+          },
+        ),
         BuildSettingItem(icon: Assets.svgLock, title: 'Security', onTap: () {}),
         BuildSettingItem(
           icon: Assets.svgLanguageSquare,

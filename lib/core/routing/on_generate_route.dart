@@ -5,6 +5,7 @@ import 'package:doctor_app/features/home/presentation/home_screen.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/logIn/presentation/login_screen.dart';
 import 'package:doctor_app/features/onBoarding/presentation/on_boarding_screen.dart';
+import 'package:doctor_app/features/profile/presentation/screens/FAQ_screen.dart';
 import 'package:doctor_app/features/profile/presentation/screens/profile_information_screen.dart';
 import 'package:doctor_app/features/profile/presentation/screens/profile_screen.dart';
 import 'package:doctor_app/features/profile/presentation/screens/setting_screen.dart';
@@ -46,7 +47,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ProfileInformationScreen());
       case Routes.setting:
         return MaterialPageRoute(builder: (_) => SettingScreen());
-
+      case Routes.FAQ:
+        return MaterialPageRoute(builder: (_) => FAQScreen());
       default:
         return null;
     }
