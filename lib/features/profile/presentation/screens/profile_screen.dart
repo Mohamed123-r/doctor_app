@@ -1,3 +1,5 @@
+import 'package:doctor_app/core/helpers/navigation_extension.dart';
+import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
@@ -35,7 +37,9 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           const SizedBox(width: 48),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.setting);
+            },
             icon: SvgPicture.asset(Assets.svgSetting),
           ),
         ],
