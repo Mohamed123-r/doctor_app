@@ -3,7 +3,6 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeTopBar extends StatelessWidget {
   const HomeTopBar({super.key});
@@ -39,11 +38,9 @@ class HomeTopBar extends StatelessWidget {
             child: CircleAvatar(
               radius: 24,
               backgroundColor: AppColors.grey20,
-              child: SvgPicture.asset(
-                Assets.svgProfile,
-                width: 24,
-                height: 24,
-                color: AppColors.grey100,
+              child: Image.asset(
+                Assets.imagesProfile,
+                fit: BoxFit.cover,
               ),
             ),
           ),

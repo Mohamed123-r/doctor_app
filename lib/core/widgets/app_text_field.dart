@@ -15,7 +15,7 @@ class AppTextField extends StatelessWidget {
     this.hintTextColor = AppColors.grey50,
     this.cursorColor = AppColors.primary100,
     this.readOnly = false,
-    this.autofillHints,
+    this.autofillHints, this.initialValue,
   });
 
   final bool? readOnly;
@@ -31,10 +31,12 @@ class AppTextField extends StatelessWidget {
   final Color cursorColor;
 
   final Iterable<String>? autofillHints;
+  final String? initialValue ;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue:initialValue ,
       controller: controller,
       cursorColor: cursorColor,
       autofillHints: autofillHints,

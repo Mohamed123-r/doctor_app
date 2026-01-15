@@ -16,6 +16,7 @@ class Assets {
   static const String svgDirectboxNotif = 'assets/svg/directbox-notif.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
   static const String svgDoctor = 'assets/svg/Doctor.svg';
+  static const String svgEdit = 'assets/svg/edit.svg';
   static const String svgNotivication = 'assets/svg/notivication.svg';
   static const String svgPersonalcard = 'assets/svg/personalcard.svg';
   static const String svgProfile = 'assets/svg/Profile.svg';
