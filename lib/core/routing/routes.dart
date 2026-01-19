@@ -8,4 +8,5 @@ class Routes {
   static const String profileInformation = '/profileInformation';
   static const String setting = '/setting';
   static const String FAQ = '/FAQ';
+  static const String language = '/language';
 }
