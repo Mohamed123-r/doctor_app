@@ -29,7 +29,9 @@ class SettingScreenBody extends StatelessWidget {
         BuildSettingItem(
           icon: Assets.svgLanguageSquare,
           title: 'Language',
-          onTap: () {},
+          onTap: () {
+            context.pushNamed(Routes.language);
+          },
         ),
         BuildSettingItem(
           icon: Assets.svgLogout,

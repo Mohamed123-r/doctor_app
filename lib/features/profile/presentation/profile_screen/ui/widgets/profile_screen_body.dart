@@ -2,9 +2,10 @@ import 'package:doctor_app/core/helpers/navigation_extension.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
-import 'package:doctor_app/features/profile/presentation/screens/widgets/build_profile_item.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+
+import 'build_profile_item.dart';
 
 class ProfileScreenBody extends StatelessWidget {
   const ProfileScreenBody({super.key});
