@@ -18,7 +18,8 @@ class DoctorApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.backgroundWhite,
         fontFamily: 'Inter',
       ),
-        initialRoute:isLoggedInUser ? Routes.home : Routes.onboarding  ,
+       // initialRoute:isLoggedInUser ? Routes.home : Routes.onboarding  ,
+        initialRoute: Routes.myAppointment,
         onGenerateRoute: appRouter.onGenerateRoute,
       );
   }

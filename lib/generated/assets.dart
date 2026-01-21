@@ -21,6 +21,7 @@ class Assets {
   static const String svgLanguageSquare = 'assets/svg/language-square.svg';
   static const String svgLock = 'assets/svg/lock.svg';
   static const String svgLogout = 'assets/svg/logout.svg';
+  static const String svgMessageText = 'assets/svg/message-text.svg';
   static const String svgNotivication = 'assets/svg/notivication.svg';
   static const String svgPersonalcard = 'assets/svg/personalcard.svg';
   static const String svgProfile = 'assets/svg/Profile.svg';

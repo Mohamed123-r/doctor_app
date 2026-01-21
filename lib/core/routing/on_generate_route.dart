@@ -1,5 +1,6 @@
 import 'package:doctor_app/core/di/dependency_injection.dart';
 import 'package:doctor_app/core/routing/routes.dart';
+import 'package:doctor_app/features/appointment/presentation/appointment_screen/ui/appointment_screen.dart';
 import 'package:doctor_app/features/home/presentation/cubits/specializations_cubit.dart';
 import 'package:doctor_app/features/home/presentation/home_screen.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
@@ -8,12 +9,13 @@ import 'package:doctor_app/features/onBoarding/presentation/on_boarding_screen.d
 import 'package:doctor_app/features/profile/presentation/language_screen/ui/language_screen.dart';
 import 'package:doctor_app/features/profile/presentation/profile_informaion_screen/ui/profile_information_screen.dart';
 import 'package:doctor_app/features/profile/presentation/profile_screen/ui/profile_screen.dart';
-import 'package:doctor_app/features/profile/presentation/screens/FAQ_screen/ui/FAQ_screen.dart';
 import 'package:doctor_app/features/profile/presentation/setting_screen/ui/setting_screen.dart';
 import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:doctor_app/features/sign_up/presentation/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../features/profile/presentation/FAQ_screen/ui/FAQ_screen.dart';
 
 class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -52,6 +54,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => FAQScreen());
       case Routes.language:
         return MaterialPageRoute(builder: (_) => LanguageScreen());
+      case Routes.myAppointment:
+        return MaterialPageRoute(builder: (_) => MyAppointmentScreen());
       default:
         return null;
     }
