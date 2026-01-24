@@ -10,4 +10,6 @@ class Routes {
   static const String FAQ = '/FAQ';
   static const String language = '/language';
   static const String myAppointment = '/appointment';
+  static const String reschedule = '/reschedule';
+  static const String successReschedule = '/successReschedule';
 }
