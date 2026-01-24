@@ -14,7 +14,8 @@ import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dar
 import 'package:doctor_app/features/sign_up/presentation/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import '../../features/appointment/presentation/reschedule_screen/ui/reschedule_screen.dart';
+import '../../features/appointment/presentation/reschedule_screen/ui/reschedule_success_screen.dart';
 import '../../features/profile/presentation/FAQ_screen/ui/FAQ_screen.dart';
 
 class AppRouter {
@@ -56,6 +57,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LanguageScreen());
       case Routes.myAppointment:
         return MaterialPageRoute(builder: (_) => MyAppointmentScreen());
+      case Routes.reschedule:
+        return MaterialPageRoute(builder: (_) => RescheduleScreen());
+      case Routes.successReschedule:
+        return MaterialPageRoute(builder: (_) => RescheduleSuccessScreen());
       default:
         return null;
     }

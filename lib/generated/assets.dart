@@ -13,6 +13,7 @@ class Assets {
   static const String imagesProfile = 'assets/images/profile.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String svgBackgroundLogo = 'assets/svg/background_logo.svg';
+  static const String svgCall = 'assets/svg/call.svg';
   static const String svgDirectboxNotif = 'assets/svg/directbox-notif.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
   static const String svgDoctor = 'assets/svg/Doctor.svg';
@@ -25,8 +26,10 @@ class Assets {
   static const String svgNotivication = 'assets/svg/notivication.svg';
   static const String svgPersonalcard = 'assets/svg/personalcard.svg';
   static const String svgProfile = 'assets/svg/Profile.svg';
+  static const String svgProfile2user = 'assets/svg/profile-2user.svg';
   static const String svgSearchNormal = 'assets/svg/search-normal.svg';
   static const String svgSetting = 'assets/svg/setting.svg';
+  static const String svgVideo = 'assets/svg/video.svg';
   static const String svgWallet = 'assets/svg/wallet.svg';
 
 }
