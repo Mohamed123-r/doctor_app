@@ -42,10 +42,14 @@ class RescheduleScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(16),
-        child: AppButton(title: "Reschedule", onPressed: () {}),
+        child: AppButton(
+          title: "Reschedule",
+          onPressed: () {
+            context.pushNamed(Routes.successReschedule);
+          },
+        ),
       ),
       body: RescheduleScreenBody(),
     );
   }
 }
-
