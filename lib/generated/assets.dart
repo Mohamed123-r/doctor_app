@@ -13,7 +13,9 @@ class Assets {
   static const String imagesProfile = 'assets/images/profile.png';
   static const String imagesSplash = 'assets/images/splash.png';
   static const String svgBackgroundLogo = 'assets/svg/background_logo.svg';
+  static const String svgCalendar2 = 'assets/svg/calendar-2.svg';
   static const String svgCall = 'assets/svg/call.svg';
+  static const String svgClipboardText = 'assets/svg/clipboard-text.svg';
   static const String svgDirectboxNotif = 'assets/svg/directbox-notif.svg';
   static const String svgDocLogo = 'assets/svg/doc_logo.svg';
   static const String svgDoctor = 'assets/svg/Doctor.svg';
