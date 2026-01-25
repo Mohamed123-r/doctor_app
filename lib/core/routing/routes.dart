@@ -12,4 +12,5 @@ class Routes {
   static const String myAppointment = '/appointment';
   static const String reschedule = '/reschedule';
   static const String successReschedule = '/successReschedule';
+  static const String search = '/search';
 }

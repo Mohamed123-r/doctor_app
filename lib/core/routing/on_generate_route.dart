@@ -10,6 +10,7 @@ import 'package:doctor_app/features/profile/presentation/language_screen/ui/lang
 import 'package:doctor_app/features/profile/presentation/profile_informaion_screen/ui/profile_information_screen.dart';
 import 'package:doctor_app/features/profile/presentation/profile_screen/ui/profile_screen.dart';
 import 'package:doctor_app/features/profile/presentation/setting_screen/ui/setting_screen.dart';
+import 'package:doctor_app/features/search/presentation/search_screen/ui/search_screen.dart';
 import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:doctor_app/features/sign_up/presentation/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +62,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => RescheduleScreen());
       case Routes.successReschedule:
         return MaterialPageRoute(builder: (_) => RescheduleSuccessScreen());
+      case Routes.search:
+        return MaterialPageRoute(builder: (_) => SearchScreen());
       default:
         return null;
     }

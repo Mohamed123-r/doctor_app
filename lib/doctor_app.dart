@@ -19,7 +19,7 @@ class DoctorApp extends StatelessWidget {
         fontFamily: 'Inter',
       ),
        // initialRoute:isLoggedInUser ? Routes.home : Routes.onboarding  ,
-        initialRoute: Routes.myAppointment,
+        initialRoute: Routes.search,
         onGenerateRoute: appRouter.onGenerateRoute,
       );
   }
