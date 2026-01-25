@@ -15,7 +15,7 @@ class AppTextField extends StatelessWidget {
     this.hintTextColor = AppColors.grey50,
     this.cursorColor = AppColors.primary100,
     this.readOnly = false,
-    this.autofillHints, this.initialValue,
+    this.autofillHints, this.initialValue, this.prefixIcon,
   });
 
   final bool? readOnly;
@@ -23,6 +23,7 @@ class AppTextField extends StatelessWidget {
   final String hintText;
   final TextInputType keyboardType;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final TextEditingController? controller;
   final void Function(String?)? onChanged;
   final String? Function(String?)? validator;
@@ -61,6 +62,7 @@ class AppTextField extends StatelessWidget {
           context,
         ).copyWith(color: hintTextColor),
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
         border: _buildOutlineInputBorder(),
         enabledBorder: _buildOutlineInputBorder(),
         focusedBorder: _focusedOutlineInputBorder(),
