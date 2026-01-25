@@ -1,10 +1,11 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
-import 'package:doctor_app/features/home/presentation/widgets/speciality_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../data/models/specializations_response_model.dart';
+
+import '../../../data/models/specializations_response_model.dart';
 import '../cubits/specializations_cubit.dart';
+import 'speciality_item.dart';
 
 class SpecialitySection extends StatefulWidget {
   const SpecialitySection({super.key, required this.specializationDataList});

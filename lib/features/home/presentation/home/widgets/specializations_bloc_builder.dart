@@ -1,9 +1,10 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
-import 'package:doctor_app/features/home/presentation/cubits/specializations_cubit.dart';
-import 'package:doctor_app/features/home/presentation/cubits/specializations_state.dart';
-import 'package:doctor_app/features/home/presentation/widgets/speciality_section.dart';
+import 'package:doctor_app/features/home/presentation/home/widgets/speciality_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubits/specializations_cubit.dart';
+import '../cubits/specializations_state.dart';
 
 class SpecializationsBlocBuilder extends StatelessWidget {
   const SpecializationsBlocBuilder({super.key});

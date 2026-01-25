@@ -2,12 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:doctor_app/core/networking/api_service.dart';
 import 'package:doctor_app/core/networking/dio_factory.dart';
 import 'package:doctor_app/features/home/data/repo/specializations_repo.dart';
-import 'package:doctor_app/features/home/presentation/cubits/specializations_cubit.dart';
 import 'package:doctor_app/features/logIn/data/repo/login_repo.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/sign_up/data/repo/sign_up_repo.dart';
 import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dart';
 import 'package:get_it/get_it.dart';
+
+import '../../features/home/presentation/home/cubits/specializations_cubit.dart';
 
 final getIt = GetIt.instance;
 

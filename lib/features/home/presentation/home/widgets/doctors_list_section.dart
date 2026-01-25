@@ -1,8 +1,9 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
-import 'package:doctor_app/features/home/presentation/widgets/doctor_item.dart';
 import 'package:flutter/material.dart';
+
+import 'doctor_item.dart';
 
 class DoctorsListSection extends StatelessWidget {
   final List<Doctors?>? doctorsList;
