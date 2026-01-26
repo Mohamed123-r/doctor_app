@@ -4,6 +4,7 @@ class Routes {
   static const String login = '/login';
   static const String signUp = '/register';
   static const String home = '/home';
+  static const String doctorDetails = '/doctorDetails';
   static const String profile = '/profile';
   static const String profileInformation = '/profileInformation';
   static const String setting = '/setting';

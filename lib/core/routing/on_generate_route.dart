@@ -1,6 +1,7 @@
 import 'package:doctor_app/core/di/dependency_injection.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/features/appointment/presentation/appointment_screen/ui/appointment_screen.dart';
+import 'package:doctor_app/features/home/presentation/doctor_details_screen/ui/doctor_details_screen.dart';
 import 'package:doctor_app/features/home/presentation/home/home_screen.dart';
 import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/logIn/presentation/login_screen.dart';
@@ -46,6 +47,10 @@ class AppRouter {
             child: HomeScreen(),
           ),
         );
+      case Routes.doctorDetails:
+        return MaterialPageRoute(builder: (_) => DoctorDetailsScreen(
+          doctor: settings.arguments  as dynamic,
+        ));
       case Routes.profile:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
       case Routes.profileInformation:
