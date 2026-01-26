@@ -6,21 +6,21 @@ import 'core/helpers/constants.dart';
 
 class DoctorApp extends StatelessWidget {
   const DoctorApp({super.key, required this.appRouter});
-  final AppRouter appRouter ;
+
+  final AppRouter appRouter;
+
   @override
   Widget build(BuildContext context) {
-    return
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Doctor App',
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Doctor App',
       theme: ThemeData(
         primaryColor: AppColors.primary100,
         scaffoldBackgroundColor: AppColors.backgroundWhite,
         fontFamily: 'Inter',
       ),
-       // initialRoute:isLoggedInUser ? Routes.home : Routes.onboarding  ,
-        initialRoute: Routes.search,
-        onGenerateRoute: appRouter.onGenerateRoute,
-      );
+      initialRoute: isLoggedInUser ? Routes.home : Routes.onboarding,
+      onGenerateRoute: appRouter.onGenerateRoute,
+    );
   }
 }

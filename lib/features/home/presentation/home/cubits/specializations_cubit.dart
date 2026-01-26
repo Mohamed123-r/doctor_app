@@ -1,9 +1,9 @@
+import 'package:doctor_app/core/networking/api_error_model.dart';
 import 'package:doctor_app/core/networking/api_result.dart';
+import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
 import 'package:doctor_app/features/home/data/repo/specializations_repo.dart';
-import 'package:doctor_app/features/home/presentation/cubits/specializations_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/networking/api_error_model.dart' show ApiErrorModel;
-import '../../data/models/specializations_response_model.dart';
+import 'specializations_state.dart';
 
 class SpecializationsCubit extends Cubit<SpecializationsState> {
   final SpecializationsRepo specializationsRepo;
