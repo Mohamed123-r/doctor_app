@@ -6,6 +6,7 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../generated/l10n.dart';
 import 'widgets/profile_screen_body.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -29,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
           },
         ),
         title: Text(
-          'Profile',
+          S.of(context).profile,
           style: AppTextStyles.semibold18(
             context,
           ).copyWith(color: AppColors.white),

@@ -4,6 +4,8 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
+
 class HaveAccountSection extends StatelessWidget {
   const HaveAccountSection({super.key});
 
@@ -16,13 +18,13 @@ class HaveAccountSection extends StatelessWidget {
         },
         child: RichText(
           text: TextSpan(
-            text: "Already have an account yet? ",
+            text: S.of(context).alreadyHaveAnAccountYet,
             style: AppTextStyles.regular14(
               context,
             ).copyWith(color: AppColors.body),
             children: [
               TextSpan(
-                text: 'Sign Up',
+                text: S.of(context).signUp,
                 style: AppTextStyles.semibold14(
                   context,
                 ).copyWith(color: AppColors.primary100),

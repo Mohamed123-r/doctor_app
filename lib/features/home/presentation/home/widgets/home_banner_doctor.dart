@@ -3,6 +3,9 @@ import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/theming/locale_cubit.dart';
+import '../../../../../generated/l10n.dart';
 
 class HomeBannerDoctor extends StatelessWidget {
   const HomeBannerDoctor({super.key});
@@ -13,9 +16,7 @@ class HomeBannerDoctor extends StatelessWidget {
       height: 215,
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Stack(
           children: [
             Align(
@@ -36,7 +37,7 @@ class HomeBannerDoctor extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Book and\nschedule with\nnearest doctor',
+                      S.of(context).bookAndnscheduleWithnnearestDoctor,
                       style: AppTextStyles.medium20(
                         context,
                       ).copyWith(color: AppColors.white),
@@ -45,7 +46,7 @@ class HomeBannerDoctor extends StatelessWidget {
                     AppButton(
                       isSecondary: true,
                       isMin: true,
-                      title: "Find Nearby",
+                      title: S.of(context).findNearby,
                       onPressed: () {},
                     ),
                   ],
@@ -53,7 +54,12 @@ class HomeBannerDoctor extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 15,
+              right: context.watch<LocaleCubit>().state.languageCode == 'en'
+                  ? 15
+                  : null,
+              left: context.watch<LocaleCubit>().state.languageCode == 'ar'
+                  ? 15
+                  : null,
               bottom: 0,
               child: Image.asset(Assets.imagesBannerImage, height: 215),
             ),

@@ -2,6 +2,7 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
 import 'widgets/language_body.dart';
 
 class LanguageScreen extends StatelessWidget {
@@ -30,7 +31,10 @@ class LanguageScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('Language', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).language,
+          style: AppTextStyles.semibold18(context),
+        ),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),

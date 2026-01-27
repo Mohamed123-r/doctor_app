@@ -2,6 +2,9 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../../generated/l10n.dart';
+
 class SelectDateSection extends StatefulWidget {
   const SelectDateSection({super.key});
 
@@ -20,11 +23,14 @@ class _SelectDateSectionState extends State<SelectDateSection> {
         // Select Date
         Row(
           children: [
-            Text('Select Date', style: AppTextStyles.semibold16(context)),
+            Text(
+              S.of(context).selectDate,
+              style: AppTextStyles.semibold16(context),
+            ),
             Spacer(),
             GestureDetector(
               child: Text(
-                'Set Manual',
+                S.of(context).setManual,
                 style: AppTextStyles.medium12(
                   context,
                 ).copyWith(color: AppColors.primary100),
@@ -44,7 +50,7 @@ class _SelectDateSectionState extends State<SelectDateSection> {
                 icon: Icon(Icons.chevron_left),
                 padding: EdgeInsets.zero,
               ),
-              ...List.generate(4, (i) {
+              ...List.generate(3, (i) {
                 DateTime day = DateTime.now().add(Duration(days: offset + i));
                 bool isSelected = selectedDate.isSameDate(
                   day,
@@ -52,7 +58,7 @@ class _SelectDateSectionState extends State<SelectDateSection> {
                 return GestureDetector(
                   onTap: () => setState(() => selectedDate = day),
                   child: Container(
-                    width: isSelected ? 60 : 55,
+                    width: isSelected ? 75 : 70,
                     height: isSelected ? 75 : 65,
                     padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -98,6 +104,7 @@ class _SelectDateSectionState extends State<SelectDateSection> {
     );
   }
 }
+
 extension DateOnlyCompare on DateTime {
   bool isSameDate(DateTime other) {
     return year == other.year && month == other.month && day == other.day;

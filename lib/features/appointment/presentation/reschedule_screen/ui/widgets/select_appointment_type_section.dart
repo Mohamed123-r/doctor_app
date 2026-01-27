@@ -4,6 +4,8 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../../generated/l10n.dart';
+
 class SelectAppointmentTypeSection extends StatefulWidget {
   const SelectAppointmentTypeSection({super.key});
 
@@ -16,19 +18,19 @@ class _SelectAppointmentTypeSectionState
     extends State<SelectAppointmentTypeSection> {
   int appointmentType = 0; // 0: In Person, 1: Video Call, 2: Phone Call
 
-  List<Map> appointmentTypes = [
+  late List<Map> appointmentTypes = [
     {
-      'name': 'In Person',
+      'name': S.of(context).inPerson,
       'icon': Assets.svgProfile2user,
       'color': AppColors.secondarySurfaceBlue,
     },
     {
-      'name': 'Video Call',
+      'name': S.of(context).videoCall,
       'icon': Assets.svgVideo,
       'color': AppColors.secondarySurfaceGreen,
     },
     {
-      'name': 'Phone Call',
+      'name': S.of(context).phoneCall,
       'icon': Assets.svgCall,
       'color': AppColors.secondarySurfaceRed,
     },
@@ -41,7 +43,10 @@ class _SelectAppointmentTypeSectionState
 
       children: [
         // Appointment Type
-        Text('Appointment Type', style: AppTextStyles.semibold16(context)),
+        Text(
+          S.of(context).appointmentType,
+          style: AppTextStyles.semibold16(context),
+        ),
         SizedBox(height: 16),
         ListView.builder(
           shrinkWrap: true,

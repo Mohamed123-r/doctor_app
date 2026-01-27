@@ -1,6 +1,9 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../../generated/l10n.dart';
+
 class SelectTimeSection extends StatefulWidget {
   const SelectTimeSection({super.key});
 
@@ -18,7 +21,10 @@ class _SelectTimeSectionState extends State<SelectTimeSection> {
 
       children: [
         // Select Time
-        Text('Available time', style: AppTextStyles.semibold16(context)),
+        Text(
+          S.of(context).availableTime,
+          style: AppTextStyles.semibold16(context),
+        ),
         SizedBox(height: 16),
         GridView.count(
           crossAxisCount: 2,

@@ -2,6 +2,8 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../generated/l10n.dart';
+
 class FAQSection extends StatefulWidget {
   const FAQSection({super.key});
 
@@ -12,46 +14,46 @@ class FAQSection extends StatefulWidget {
 class _FAQSectionState extends State<FAQSection> {
   final Set<int> expanded = {};
 
-  final List<Map<String, String>> faqs = [
+  late final List<Map<String, String>> faqs = [
     {
-      "question": "What should I expect during a doctor's appointment?",
+      "question": S.of(context).whatShouldIExpectDuringADoctorsAppointment,
       "answer":
-          "During a doctor's appointment, you can expect to discuss your medical history, current symptoms or concerns, and any medications or treatments you are taking. The doctor will likely perform a physical exam and may order additional tests or procedures if necessary.",
+          S.of(context).duringADoctorsAppointmentYouCanExpectToDiscussYour,
     },
     {
-      "question": "What should I bring to my doctor's appointment?",
+      "question": S.of(context).whatShouldIBringToMyDoctorsAppointment,
       "answer":
-          "Bring your ID, insurance card, list of medications, and any relevant medical records.",
+          S.of(context).bringYourIdInsuranceCardListOfMedicationsAndAny,
     },
     {
-      "question": "What if I need to cancel or reschedule my appointment?",
+      "question": S.of(context).whatIfINeedToCancelOrRescheduleMyAppointment,
       "answer":
-          "Contact the clinic as soon as possible to cancel or reschedule.",
+          S.of(context).contactTheClinicAsSoonAsPossibleToCancelOr,
     },
     {
-      "question": "How do I make an appointment with a doctor?",
-      "answer": "You can book through the app or call the clinic directly.",
+      "question": S.of(context).howDoIMakeAnAppointmentWithADoctor,
+      "answer": S.of(context).youCanBookThroughTheAppOrCallTheClinic,
     },
     {
-      "question": "How early should I arrive for my doctor's appointment?",
-      "answer": "Arrive 15-20 minutes early to complete any paperwork.",
+      "question": S.of(context).howEarlyShouldIArriveForMyDoctorsAppointment,
+      "answer": S.of(context).arrive1520MinutesEarlyToCompleteAnyPaperwork,
     },
     {
-      "question": "How long will my doctor's appointment take? ",
+      "question": S.of(context).howLongWillMyDoctorsAppointmentTake,
       "answer":
-          "Appointments typically last 15-30 minutes, but may vary based on your needs.",
+          S.of(context).appointmentsTypicallyLast1530MinutesButMayVaryBasedOn,
     },
 
     {
-      "question": "How much will my doctor's appointment cost? ",
+      "question": S.of(context).howMuchWillMyDoctorsAppointmentCost,
       "answer":
-          "Costs vary based on insurance and services; check with your provider for details.",
+          S.of(context).costsVaryBasedOnInsuranceAndServicesCheckWithYour,
     },
 
     {
-      "question": "What should I look for in a good doctor? ",
+      "question": S.of(context).whatShouldILookForInAGoodDoctor,
       "answer":
-          "Look for qualifications, experience, communication skills, and patient reviews.",
+          S.of(context).lookForQualificationsExperienceCommunicationSkillsAndPatientReviews,
     },
   ];
 

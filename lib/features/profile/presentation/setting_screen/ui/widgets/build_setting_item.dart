@@ -21,34 +21,37 @@ class BuildSettingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            Row(
-              children: [
-                Center(child: SvgPicture.asset(icon)),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              child: Row(
+                children: [
+                  Center(child: SvgPicture.asset(icon)),
 
-                const SizedBox(width: 16),
-                Text(
-                  title,
-                  style: AppTextStyles.regular14(context).copyWith(
-                    color: isTextRed
-                        ? AppColors.secondaryFillRed
-                        : AppColors.black,
+                  const SizedBox(width: 16),
+                  Text(
+                    title,
+                    style: AppTextStyles.regular14(context).copyWith(
+                      color: isTextRed
+                          ? AppColors.secondaryFillRed
+                          : AppColors.black,
+                    ),
                   ),
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                  color: AppColors.grey100,
-                ),
-              ],
+                  Spacer(),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    size: 18,
+                    color: AppColors.grey100,
+                  ),
+                ],
+              ),
             ),
-            Divider(color: AppColors.grey40, thickness: 1, height: 32),
+            Divider(color: AppColors.grey40, thickness: 1, height: 0),
           ],
         ),
       ),

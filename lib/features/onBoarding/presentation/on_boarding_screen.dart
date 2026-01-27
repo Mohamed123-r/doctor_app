@@ -7,6 +7,8 @@ import 'package:doctor_app/core/widgets/logo_and_name_app.dart';
 import 'package:doctor_app/features/onBoarding/presentation/widgets/image_and_text_in_on_boarding.dart';
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
+
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
 
@@ -25,16 +27,21 @@ class OnBoardingScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
+                      S
+                          .of(context)
+                          .manageAndScheduleAllOfYourMedicalAppointmentsEasilyWith,
                       textAlign: TextAlign.center,
                       style: AppTextStyles.medium14(
                         context,
                       ).copyWith(color: AppColors.body),
                     ),
                     const SizedBox(height: 30),
-                    AppButton(title: 'Get Started', onPressed: () {
-                      context.pushReplacementNamed(Routes.login);
-                    }),
+                    AppButton(
+                      title: S.of(context).getStarted,
+                      onPressed: () {
+                        context.pushReplacementNamed(Routes.login);
+                      },
+                    ),
                   ],
                 ),
               ),

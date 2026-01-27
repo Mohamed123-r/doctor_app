@@ -6,6 +6,8 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class RescheduleSuccessScreen extends StatelessWidget {
   const RescheduleSuccessScreen({super.key});
 
@@ -39,7 +41,10 @@ class RescheduleSuccessScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('Details', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).details,
+          style: AppTextStyles.semibold18(context),
+        ),
 
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -47,7 +52,7 @@ class RescheduleSuccessScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(16),
         child: AppButton(
-          title: "Done",
+          title: S.of(context).done,
           onPressed: () {
             context.pop();
             context.pop();
@@ -59,29 +64,29 @@ class RescheduleSuccessScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 72),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 32),
-                  Icon(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: 32),
+                Align(
+                  alignment: Alignment.center,
+                  child: Icon(
                     Icons.check_circle,
                     size: 100,
                     color: AppColors.secondaryFillGreen,
                   ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Booking has been rescheduled',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.medium20(context),
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(height: 16),
+                Text(
+                  S.of(context).bookingHasBeenRescheduled,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.medium20(context),
+                ),
+              ],
             ),
             SizedBox(height: 32),
             Text(
-              'Booking Information',
+              S.of(context).bookingInformation,
               style: AppTextStyles.semibold16(context),
             ),
             Padding(
@@ -108,12 +113,12 @@ class RescheduleSuccessScreen extends StatelessWidget {
 
                         children: [
                           Text(
-                            'Date & Time',
+                            S.of(context).dateTime,
                             style: AppTextStyles.semibold14(context),
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'Wednesday, 08 May 2023',
+                            S.of(context).wednesday08May2023,
                             style: AppTextStyles.regular12(
                               context,
                             ).copyWith(color: AppColors.body),
@@ -151,12 +156,12 @@ class RescheduleSuccessScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Appointment Type',
+                            S.of(context).appointmentType,
                             style: AppTextStyles.semibold14(context),
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'Video Call',
+                            S.of(context).videoCall,
                             style: AppTextStyles.regular12(
                               context,
                             ).copyWith(color: AppColors.body),
@@ -173,7 +178,7 @@ class RescheduleSuccessScreen extends StatelessWidget {
 
             SizedBox(height: 16),
             Text(
-              'Doctor Information',
+              S.of(context).doctorInformation,
               style: AppTextStyles.semibold16(context),
             ),
 
@@ -217,14 +222,14 @@ class RescheduleSuccessScreen extends StatelessWidget {
 
                         const SizedBox(height: 4),
                         Text(
-                          "Degree / ${doctor["degree"]}",
+                          "${S.of(context).degree} ${doctor["degree"]}",
                           style: AppTextStyles.medium14(
                             context,
                           ).copyWith(color: AppColors.body),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          '\$${doctor["price"] ?? ''} / visit',
+                          doctor["phone"] ?? '',
                           style: AppTextStyles.medium14(
                             context,
                           ).copyWith(color: AppColors.body),

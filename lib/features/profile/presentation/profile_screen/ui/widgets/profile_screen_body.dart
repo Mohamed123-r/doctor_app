@@ -5,6 +5,7 @@ import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../generated/l10n.dart';
 import 'build_profile_item.dart';
 
 class ProfileScreenBody extends StatelessWidget {
@@ -54,7 +55,7 @@ class ProfileScreenBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'My Appointment',
+                          S.of(context).myAppointment,
                           style: AppTextStyles.regular12(context),
                         ),
 
@@ -65,7 +66,7 @@ class ProfileScreenBody extends StatelessWidget {
                         ),
 
                         Text(
-                          'Medical records',
+                          S.of(context).medicalRecords,
                           style: AppTextStyles.regular12(context),
                         ),
                       ],
@@ -80,18 +81,18 @@ class ProfileScreenBody extends StatelessWidget {
                   child: BuildProfileItem(
                     icon: Assets.svgPersonalcard,
                     iconColor: AppColors.primary20,
-                    title: 'Personal Information',
+                    title: S.of(context).personalInformation,
                   ),
                 ),
                 BuildProfileItem(
                   icon: Assets.svgDirectboxNotif,
                   iconColor: AppColors.secondarySurfaceGreen,
-                  title: 'My Test & Diagnostic',
+                  title: S.of(context).myTestDiagnostic,
                 ),
                 BuildProfileItem(
                   icon: Assets.svgWallet,
                   iconColor: AppColors.secondarySurfaceRed,
-                  title: 'Payment Methods',
+                  title: S.of(context).paymentMethods,
                 ),
               ],
             ),

@@ -2,6 +2,8 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
+
 class ForgotPasswordSection extends StatelessWidget {
   const ForgotPasswordSection({super.key});
 
@@ -14,7 +16,7 @@ class ForgotPasswordSection extends StatelessWidget {
           // Handle forgot password tap
         },
         child: Text(
-          'Forgot Password?',
+          S.of(context).forgotPassword,
           style: AppTextStyles.semibold12(
             context,
           ).copyWith(color: AppColors.primary100),

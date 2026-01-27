@@ -1,6 +1,7 @@
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
+import 'package:doctor_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -31,7 +32,7 @@ class FAQScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('FAQ', style: AppTextStyles.semibold18(context)),
+        title: Text(S.of(context).faq, style: AppTextStyles.semibold18(context)),
         actions: [
           Center(
             child: Container(

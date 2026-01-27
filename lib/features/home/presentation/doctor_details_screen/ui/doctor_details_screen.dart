@@ -5,6 +5,7 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../data/models/specializations_response_model.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
@@ -35,7 +36,7 @@ class DoctorDetailsScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          doctor?.name ?? 'Doctor Details',
+          doctor?.name ?? S.of(context).doctorDetails,
           style: AppTextStyles.semibold18(context),
         ),
         actions: [
@@ -64,7 +65,7 @@ class DoctorDetailsScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: AppButton(title: "Make An Appointment", onPressed: () {})
+          child: AppButton(title: S.of(context).makeAnAppointment, onPressed: () {})
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -135,7 +136,7 @@ class DoctorDetailsScreen extends StatelessWidget {
               Divider(color: AppColors.grey40, thickness: 1, height: 0),
               SizedBox(height: 24),
 
-              Text('About Doctor', style: AppTextStyles.semibold16(context)),
+              Text(S.of(context).aboutDoctor, style: AppTextStyles.semibold16(context)),
               SizedBox(height: 8),
               Text(
                 doctor?.description ?? '',
@@ -146,48 +147,50 @@ class DoctorDetailsScreen extends StatelessWidget {
 
               SizedBox(height: 12),
               Text(
-                'specialization: ${doctor?.specialization?.name ?? ''} ',
+                "${S.of(context).specializationDoctorspecializationname} ${doctor?.specialization?.name}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
               ),
               SizedBox(height: 12),
               Text(
-                'degree: ${doctor?.degree ?? ''} ',
+                "${S.of(context).degree} ${doctor?.degree}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
               ),
               SizedBox(height: 24),
-              Text('Appoint Price', style: AppTextStyles.semibold16(context)),
+              Text(S.of(context).appointPrice, style: AppTextStyles.semibold16(context)),
               SizedBox(height: 8),
               Text(
-                ' ${doctor?.appointPrice ?? ''} USD / visit ',
+
+                "${doctor?.appointPrice} ${S.of(context).usdVisit} ",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
               ),
               SizedBox(height: 24),
-              Text('Working Time', style: AppTextStyles.semibold16(context)),
+              Text(S.of(context).workingTime, style: AppTextStyles.semibold16(context)),
               SizedBox(height: 8),
               Text(
-                'start time: ${doctor?.startTime ?? ''} ',
+
+                "${S.of(context).degree} ${doctor?.startTime}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
               ),
               SizedBox(height: 4),
               Text(
-                'end time: ${doctor?.endTime ?? ''} ',
+                "${S.of(context).degree} ${doctor?.endTime}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
               ),
               SizedBox(height: 24),
-              Text("Address", style: AppTextStyles.semibold16(context)),
+              Text(S.of(context).address, style: AppTextStyles.semibold16(context)),
               SizedBox(height: 8),
               Text(
-                'city: ${doctor?.city?.name ?? ''} ',
+                "${S.of(context).degree} ${doctor?.city?.name}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),
@@ -197,7 +200,7 @@ class DoctorDetailsScreen extends StatelessWidget {
 
               ),
               Text(
-                'governrate: ${doctor?.city?.governrate?.name ?? ''} ',
+                "${S.of(context).degree} ${doctor?.city?.governrate?.name}",
                 style: AppTextStyles.regular14(
                   context,
                 ).copyWith(color: AppColors.body),

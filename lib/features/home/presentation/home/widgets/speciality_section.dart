@@ -3,6 +3,7 @@ import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../data/models/specializations_response_model.dart';
 import '../cubits/specializations_cubit.dart';
 import 'speciality_item.dart';
@@ -33,7 +34,7 @@ class _SpecialitySectionState extends State<SpecialitySection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Doctor Speciality',
+                S.of(context).doctorSpeciality,
                 style: AppTextStyles.semibold18(
                   context,
                 ).copyWith(color: AppColors.grey100),

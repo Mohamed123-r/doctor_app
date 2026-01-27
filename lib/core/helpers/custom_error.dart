@@ -2,6 +2,8 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 Future<void> errorDialog(
   BuildContext context, {
   required String massage,
@@ -10,10 +12,10 @@ Future<void> errorDialog(
     context: context,
     animType: AnimType.scale,
     dialogType: DialogType.error,
-    title: "Error",
+    title: S.of(context).error,
     desc: massage,
     btnOk: AppButton(
-      title: "Ok",
+      title: S.of(context).ok,
       onPressed: () {
         Navigator.pop(context);
       },
@@ -29,10 +31,10 @@ Future<void> successDialog(
     context: context,
     animType: AnimType.scale,
     dialogType: DialogType.success,
-    title: "Success",
+    title: S.of(context).success,
     desc: massage,
     btnOk: AppButton(
-      title: "Ok",
+      title: S.of(context).ok,
       onPressed: () {
         Navigator.pop(context);
       },
@@ -44,8 +46,8 @@ Future<void> loadingDialog(BuildContext context) async {
     context: context,
     animType: AnimType.scale,
     dialogType: DialogType.noHeader,
-    title: "Loading",
-    desc: "Please wait...",
+    title: S.of(context).loading,
+    desc: S.of(context).pleaseWait,
     dismissOnBackKeyPress: false,
     dismissOnTouchOutside: false,
     body: Center(
@@ -64,11 +66,11 @@ Future<void> warningDialog(
     context: context,
     animType: AnimType.scale,
     dialogType: DialogType.warning,
-    title: "Warning",
+    title: S.of(context).warning,
     desc: massage,
     btnOk: AppButton(
       // isMinWidth: true,
-      title: "Ok",
+      title: S.of(context).ok,
       onPressed: () {
         Navigator.pop(context);
       },
@@ -76,7 +78,7 @@ Future<void> warningDialog(
     btnCancel: AppButton(
       // isMinWidth: true,
       isSecondary: true,
-      title: "Cancel",
+      title: S.of(context).cancel,
       onPressed: () {
         Navigator.pop(context);
       },
@@ -89,8 +91,8 @@ Future<void> soonDialog(BuildContext context) async {
     context: context,
     dialogType: DialogType.info,
     animType: AnimType.scale,
-    title: "Coming soon",
-    desc: "This feature is coming soon",
+    title: S.of(context).comingSoon,
+    desc: S.of(context).thisFeatureIsComingSoon,
     btnOkOnPress: () {},
   ).show();
 }
