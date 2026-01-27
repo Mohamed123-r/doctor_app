@@ -4,6 +4,8 @@ import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class CreateAccountFormSection extends StatefulWidget {
   const CreateAccountFormSection({super.key});
 
@@ -28,7 +30,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
       child: Column(
         children: [
           AppTextField(
-            hintText: "Full Name",
+            hintText: S.of(context).fullName,
             keyboardType: TextInputType.name,
             controller: context.read<SignUpCubit>().nameController,
             onChanged: (value) {
@@ -44,7 +46,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
           ),
           SizedBox(height: 16),
           AppTextField(
-            hintText: "Phone Number",
+            hintText: S.of(context).phoneNumber,
             keyboardType: TextInputType.phone,
             controller: context.read<SignUpCubit>().phoneController,
             onChanged: (value) {
@@ -61,7 +63,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
           SizedBox(height: 16),
 
           AppTextField(
-            hintText: "Email",
+            hintText: S.of(context).email,
             keyboardType: TextInputType.emailAddress,
             controller: context.read<SignUpCubit>().emailController,
             onChanged: (value) {
@@ -77,7 +79,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
           ),
           SizedBox(height: 16),
           AppTextField(
-            hintText: "Password",
+            hintText: S.of(context).password,
             obscureText: !isPasswordVisible,
             controller: context.read<SignUpCubit>().passwordController,
             onChanged: (value) {
@@ -105,7 +107,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
 
           SizedBox(height: 16),
           AppTextField(
-            hintText: "Confirm Password",
+            hintText: S.of(context).confirmPassword,
             obscureText: !isConfirmPasswordVisible,
             controller: context.read<SignUpCubit>().confirmPasswordController,
             onChanged: (value) {
@@ -118,7 +120,7 @@ class _CreateAccountFormSectionState extends State<CreateAccountFormSection> {
             validator: (value) {
               if (value !=
                   context.read<SignUpCubit>().passwordController.text) {
-                return "Passwords do not match";
+                return S.of(context).passwordsDoNotMatch;
               }
               return null;
             },

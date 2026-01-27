@@ -2,6 +2,7 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
 import 'widgets/setting_screen_body.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -29,7 +30,10 @@ class SettingScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('Settings', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).settings,
+          style: AppTextStyles.semibold18(context),
+        ),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),

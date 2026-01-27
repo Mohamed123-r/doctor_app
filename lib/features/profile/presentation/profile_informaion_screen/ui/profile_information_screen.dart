@@ -2,6 +2,7 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
+import '../../../../../generated/l10n.dart';
 import 'widgets/profile_information_screen_body.dart';
 
 class ProfileInformationScreen extends StatelessWidget {
@@ -30,7 +31,7 @@ class ProfileInformationScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Profile Information',
+          S.of(context).profileInformation,
           style: AppTextStyles.semibold18(context),
         ),
         backgroundColor: AppColors.white,
@@ -38,7 +39,7 @@ class ProfileInformationScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-        child: AppButton(title: "Save", onPressed: () {}),
+        child: AppButton(title: S.of(context).save, onPressed: () {}),
       ),
       body: ProfileInformationScreenBody(),
     );

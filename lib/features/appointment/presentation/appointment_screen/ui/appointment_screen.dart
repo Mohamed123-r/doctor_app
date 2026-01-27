@@ -7,6 +7,8 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class MyAppointmentScreen extends StatefulWidget {
   const MyAppointmentScreen({super.key});
 
@@ -17,7 +19,11 @@ class MyAppointmentScreen extends StatefulWidget {
 class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
   int selectedTab = 0; // 0: Upcoming, 1: Completed, 2: Cancelled
 
-  final List<String> tabs = ['Upcoming', 'Completed', 'Cancelled'];
+  late final List<String> tabs = [
+    S.of(context).upcoming,
+    S.of(context).completed,
+    S.of(context).cancelled,
+  ];
 
   final doctor = {
     "name": "Dr. John Doe",
@@ -49,7 +55,10 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
             ),
           ),
         ),
-        title: Text('My Appointment', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).myAppointment,
+          style: AppTextStyles.semibold18(context),
+        ),
 
         actions: [
           Center(
@@ -143,8 +152,8 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
                         if (!isUpcoming) ...[
                           Text(
                             isCancelled
-                                ? 'Appointment cancelled'
-                                : 'Appointment done',
+                                ? S.of(context).appointmentCancelled
+                                : S.of(context).appointmentDone,
                             style: AppTextStyles.regular12(context).copyWith(
                               color: isCancelled
                                   ? AppColors.secondaryFillRed
@@ -153,7 +162,7 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            "Wed, 17 May | 08.30 AM",
+                            S.of(context).wed17May0830Am,
                             style: AppTextStyles.medium12(
                               context,
                             ).copyWith(color: AppColors.body),
@@ -200,7 +209,7 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
 
                                   const SizedBox(height: 4),
                                   Text(
-                                    "Degree / ${doctor["degree"]}",
+                                    "${S.of(context).degree} ${doctor["degree"]}",
                                     style: AppTextStyles.medium14(
                                       context,
                                     ).copyWith(color: AppColors.body),
@@ -208,13 +217,13 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
                                   const SizedBox(height: 8),
                                   isUpcoming
                                       ? Text(
-                                          "Wed, 17 May | 08.30 AM",
+                                          S.of(context).wed17May0830Am,
                                           style: AppTextStyles.medium14(
                                             context,
                                           ).copyWith(color: AppColors.body),
                                         )
                                       : Text(
-                                          '\$${doctor["price"] ?? ''} / visit',
+                                          doctor["phone"] ?? '',
                                           style: AppTextStyles.medium14(
                                             context,
                                           ).copyWith(color: AppColors.body),
@@ -237,14 +246,14 @@ class _MyAppointmentScreenState extends State<MyAppointmentScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AppButton(
-                                title: 'Cancel Appointment',
+                                title: S.of(context).cancelAppointment,
                                 isSecondary: true,
                                 onPressed: () {},
                                 isMin: true,
                               ),
 
                               AppButton(
-                                title: 'Reschedule',
+                                title: S.of(context).reschedule,
                                 onPressed: () {
                                   context.pushNamed(Routes.reschedule);
                                 },

@@ -4,7 +4,10 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/features/home/data/models/specializations_response_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/theming/locale_cubit.dart';
+import '../../../../../generated/l10n.dart';
 import 'doctor_item.dart';
 
 class DoctorsListSection extends StatelessWidget {
@@ -14,6 +17,7 @@ class DoctorsListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final languageCode = context.watch<LocaleCubit>().state.languageCode;
     return Column(
       children: [
         Padding(
@@ -22,7 +26,7 @@ class DoctorsListSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Recommendation Doctor',
+                S.of(context).recommendationDoctor,
                 style: AppTextStyles.semibold18(
                   context,
                 ).copyWith(color: AppColors.grey100),
@@ -45,10 +49,15 @@ class DoctorsListSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Padding(
-                padding: EdgeInsets.only(
-                  left: index == 0 ? 16.0 : 0.0,
-                  right: index == doctorsList!.length - 1 ? 16.0 : 0.0,
-                ),
+                padding: languageCode == 'en'
+                    ? EdgeInsets.only(
+                        left: index == 0 ? 16.0 : 0.0,
+                        right: index == doctorsList!.length - 1 ? 16.0 : 0.0,
+                      )
+                    : EdgeInsets.only(
+                        right: index == 0 ? 16.0 : 0.0,
+                        left: index == doctorsList!.length - 1 ? 16.0 : 0.0,
+                      ),
                 child: DoctorItem(doctor: doctorsList![index]),
               );
             },

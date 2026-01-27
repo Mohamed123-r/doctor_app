@@ -4,6 +4,8 @@ import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class HomeTopBar extends StatelessWidget {
   const HomeTopBar({super.key});
 
@@ -18,13 +20,13 @@ class HomeTopBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hi, Omar!',
+                S.of(context).hiOmar,
                 style: AppTextStyles.bold18(
                   context,
                 ).copyWith(color: AppColors.grey100),
               ),
               Text(
-                'How Are you Today?',
+                S.of(context).howAreYouToday,
                 style: AppTextStyles.regular12(
                   context,
                 ).copyWith(color: AppColors.grey80),
@@ -38,10 +40,7 @@ class HomeTopBar extends StatelessWidget {
             child: CircleAvatar(
               radius: 24,
               backgroundColor: AppColors.grey20,
-              child: Image.asset(
-                Assets.imagesProfile,
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset(Assets.imagesProfile, fit: BoxFit.cover),
             ),
           ),
         ],

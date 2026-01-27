@@ -4,6 +4,8 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../generated/l10n.dart';
+
 class ImageAndTextInOnBoarding extends StatelessWidget {
   const ImageAndTextInOnBoarding({super.key});
 
@@ -29,7 +31,7 @@ class ImageAndTextInOnBoarding extends StatelessWidget {
           right: 0,
           child: Center(
             child: Text(
-              'Best Doctor \n Appointment App',
+              S.of(context).bestDoctorNAppointmentApp,
               textAlign: TextAlign.center,
               style: AppTextStyles.bold32(
                 context,

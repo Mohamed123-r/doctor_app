@@ -8,12 +8,11 @@ import 'package:doctor_app/features/logIn/presentation/cubits/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
 import '../cubits/login_cubit.dart';
 
 class LoginBlocListener extends StatelessWidget {
-  const LoginBlocListener({
-    super.key,
-  });
+  const LoginBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,28 +25,23 @@ class LoginBlocListener extends StatelessWidget {
           success: (data) async {
             await successDialog(
               context,
-              massage: "Login Successful",
+              massage: S.of(context).loginSuccessful,
             );
-            await   SharedPrefHelper.setSecuredString(
+            await SharedPrefHelper.setSecuredString(
               SharedPrefKeys.userToken,
               data.data.token,
             );
             context.pushNamed(Routes.home);
           },
           error: (error) {
-            errorDialog(
-              context,
-              massage: error.getAllErrorMessages(),
-            );
+            errorDialog(context, massage: error.getAllErrorMessages());
           },
         );
       },
       child: AppButton(
-        title: "Login",
+        title: S.of(context).login,
         isLoading:
-        context.watch<LoginCubit>().state.whenOrNull(
-          loading: () => true,
-        ) ??
+            context.watch<LoginCubit>().state.whenOrNull(loading: () => true) ??
             false,
         onPressed: () {
           final loginCubit = context.read<LoginCubit>();

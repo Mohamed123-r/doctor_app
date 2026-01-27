@@ -2,6 +2,8 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../generated/l10n.dart';
+
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({super.key});
 
@@ -11,14 +13,14 @@ class WelcomeSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Welcome Back',
+          S.of(context).welcomeBack,
           style: AppTextStyles.bold24(
             context,
           ).copyWith(color: AppColors.primary100),
         ),
         SizedBox(height: 8),
         Text(
-          'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+          S.of(context).wereExcitedToHaveYouBackCantWaitToSee,
           style: AppTextStyles.regular16(
             context,
           ).copyWith(color: AppColors.body),

@@ -6,6 +6,7 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/routing/routes.dart';
+import '../../../../../generated/l10n.dart';
 
 class DoctorItem extends StatelessWidget {
   const DoctorItem({super.key, required this.doctor});
@@ -15,12 +16,9 @@ class DoctorItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-       onTap: () async {
-         context.pushNamed(
-           Routes.doctorDetails,
-           arguments: doctor,
-         );
-       } ,
+      onTap: () async {
+        context.pushNamed(Routes.doctorDetails, arguments: doctor);
+      },
       child: Container(
         width: 300,
         height: 150,
@@ -63,14 +61,14 @@ class DoctorItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "Degree / ${doctor!.degree}",
+                    "${S.of(context).degree} ${doctor?.degree}",
                     style: AppTextStyles.medium14(
                       context,
                     ).copyWith(color: AppColors.body),
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    '\$${doctor!.appointPrice ?? ''} / visit',
+                    "${doctor?.appointPrice} ${S.of(context).usdVisit} ",
                     style: AppTextStyles.medium14(
                       context,
                     ).copyWith(color: AppColors.body),

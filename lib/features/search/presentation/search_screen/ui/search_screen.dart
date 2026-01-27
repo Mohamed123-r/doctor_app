@@ -5,6 +5,8 @@ import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
@@ -37,7 +39,10 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('Search', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).search,
+          style: AppTextStyles.semibold18(context),
+        ),
         backgroundColor: AppColors.white,
         elevation: 0,
       ),
@@ -46,7 +51,7 @@ class SearchScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: AppTextField(
-              hintText: "Search doctor by name",
+              hintText: S.of(context).searchDoctorByName,
               keyboardType: TextInputType.text,
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(12.0),

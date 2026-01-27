@@ -6,6 +6,7 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import '../../../../../../generated/l10n.dart';
 import 'build_setting_item.dart';
 
 class SettingScreenBody extends StatelessWidget {
@@ -14,32 +15,31 @@ class SettingScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 12,
       children: [
-        SizedBox(height: 20),
-        BuildSettingItem(
-          icon: Assets.svgNotivication,
-          title: 'Notifications',
-          onTap: () {},
-        ),
+        SizedBox(height: 12),
+        // BuildSettingItem(
+        //   icon: Assets.svgNotivication,
+        //   title: 'Notifications',
+        //   onTap: () {},
+        // ),
         BuildSettingItem(
           icon: Assets.svgFAQ,
-          title: 'FAQ',
+          title: S.of(context).faq,
           onTap: () {
             context.pushNamed(Routes.FAQ);
           },
         ),
-        BuildSettingItem(icon: Assets.svgLock, title: 'Security', onTap: () {}),
+        // BuildSettingItem(icon: Assets.svgLock, title: 'Security', onTap: () {}),
         BuildSettingItem(
           icon: Assets.svgLanguageSquare,
-          title: 'Language',
+          title: S.of(context).language,
           onTap: () {
             context.pushNamed(Routes.language);
           },
         ),
         BuildSettingItem(
           icon: Assets.svgLogout,
-          title: 'Log Out',
+          title: S.of(context).logOut,
           isTextRed: true,
           onTap: () => _showLogoutDialog(context),
         ),
@@ -55,12 +55,12 @@ class SettingScreenBody extends StatelessWidget {
         backgroundColor: AppColors.white,
 
         title: Text(
-          'Logout',
+          S.of(context).logout,
           textAlign: TextAlign.center,
           style: AppTextStyles.medium18(context),
         ),
         content: Text(
-          "You'll need to enter your username and password next time you want to login",
+          S.of(context).youllNeedToEnterYourUsernameAndPasswordNextTime,
           textAlign: TextAlign.center,
           style: AppTextStyles.regular14(context),
         ),
@@ -69,7 +69,7 @@ class SettingScreenBody extends StatelessWidget {
           TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(
-              'Cancel',
+              S.of(context).cancel,
               style: AppTextStyles.regular16(
                 context,
               ).copyWith(color: AppColors.secondaryFillBlue),
@@ -77,7 +77,10 @@ class SettingScreenBody extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              await successDialog(context, massage: "Logout Successful");
+              await successDialog(
+                context,
+                massage: S.of(context).logoutSuccessful,
+              );
               await SharedPrefHelper.clearAllData();
               context.pushNamedAndRemoveUntil(
                 Routes.onboarding,
@@ -85,7 +88,7 @@ class SettingScreenBody extends StatelessWidget {
               );
             },
             child: Text(
-              'Logout',
+              S.of(context).logout,
               style: AppTextStyles.regular16(
                 context,
               ).copyWith(color: AppColors.secondaryFillRed),

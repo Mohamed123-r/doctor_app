@@ -5,6 +5,8 @@ import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
+
 class InputSection extends StatefulWidget {
   const InputSection({super.key});
 
@@ -26,7 +28,7 @@ class _InputSectionState extends State<InputSection> {
       child: Column(
         children: [
           AppTextField(
-            hintText: "Email",
+            hintText: S.of(context).email,
             keyboardType: TextInputType.emailAddress,
             controller: context.read<LoginCubit>().emailController,
             onChanged: (value) {
@@ -42,7 +44,7 @@ class _InputSectionState extends State<InputSection> {
           ),
           SizedBox(height: 16),
           AppTextField(
-            hintText: "Password",
+            hintText: S.of(context).password,
             obscureText: obscureText,
             controller: context.read<LoginCubit>().passwordController,
             onChanged: (value) {

@@ -8,6 +8,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../../../generated/l10n.dart';
 import 'widgets/reschedule_body.dart';
 
 class RescheduleScreen extends StatelessWidget {
@@ -35,7 +36,10 @@ class RescheduleScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: Text('Reschedule', style: AppTextStyles.semibold18(context)),
+        title: Text(
+          S.of(context).reschedule,
+          style: AppTextStyles.semibold18(context),
+        ),
 
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -43,7 +47,7 @@ class RescheduleScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(16),
         child: AppButton(
-          title: "Reschedule",
+          title: S.of(context).reschedule,
           onPressed: () {
             context.pushNamed(Routes.successReschedule);
           },
