@@ -541,19 +541,19 @@ class S {
     );
   }
 
-  /// `Terms and Conditions`
+  /// ` Terms and Conditions`
   String get termsAndConditions {
     return Intl.message(
-      'Terms and Conditions',
+      ' Terms and Conditions',
       name: 'termsAndConditions',
       desc: '',
       args: [],
     );
   }
 
-  /// `and`
+  /// ` and `
   String get and {
-    return Intl.message('and', name: 'and', desc: '', args: []);
+    return Intl.message(' and ', name: 'and', desc: '', args: []);
   }
 
   /// `Privacy Policy`

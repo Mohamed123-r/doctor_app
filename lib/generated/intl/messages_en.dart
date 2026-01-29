@@ -36,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "anErrorOccurredWhileFetchingDoctors": MessageLookupByLibrary.simpleMessage(
       "An error occurred while fetching doctors.",
     ),
-    "and": MessageLookupByLibrary.simpleMessage("and"),
+    "and": MessageLookupByLibrary.simpleMessage(" and "),
     "appointPrice": MessageLookupByLibrary.simpleMessage("Appoint Price"),
     "appointmentCancelled": MessageLookupByLibrary.simpleMessage(
       "Appointment cancelled",
@@ -224,7 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "startTime": MessageLookupByLibrary.simpleMessage("start time: "),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
-      "Terms and Conditions",
+      " Terms and Conditions",
     ),
     "thePasswordMustBeAtLeast8CharactersLong":
         MessageLookupByLibrary.simpleMessage(

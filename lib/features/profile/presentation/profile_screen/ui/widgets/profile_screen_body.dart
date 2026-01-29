@@ -5,11 +5,39 @@ import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/helpers/constants.dart';
+import '../../../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../../../generated/l10n.dart';
 import 'build_profile_item.dart';
 
-class ProfileScreenBody extends StatelessWidget {
+class ProfileScreenBody extends StatefulWidget {
   const ProfileScreenBody({super.key});
+
+  @override
+  State<ProfileScreenBody> createState() => _ProfileScreenBodyState();
+}
+
+class _ProfileScreenBodyState extends State<ProfileScreenBody> {
+  String userName = '';
+  String email = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final name = await SharedPrefHelper.getString(SharedPrefKeys.userName);
+    final email = await SharedPrefHelper.getSecuredString(
+      SharedPrefKeys.userEmail,
+    );
+
+    setState(() {
+      userName = name;
+      this.email = email;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +60,11 @@ class ProfileScreenBody extends StatelessWidget {
             padding: const EdgeInsets.only(top: 60),
             child: Column(
               children: [
-                Text('Omar Ahmed', style: AppTextStyles.semibold20(context)),
+                Text(userName, style: AppTextStyles.semibold20(context)),
                 const SizedBox(height: 4),
 
                 Text(
-                  'omarahmed14@gmail.com',
+                  email,
                   style: AppTextStyles.regular14(
                     context,
                   ).copyWith(color: AppColors.grey60),
@@ -54,9 +82,19 @@ class ProfileScreenBody extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(
-                          S.of(context).myAppointment,
-                          style: AppTextStyles.regular12(context),
+                        Expanded(
+                          child: InkWell(
+
+                            onTap: () {
+                              context.pushNamed(Routes.myAppointment);
+                            },
+                            child: Center(
+                              child: Text(
+                                S.of(context).myAppointment,
+                                style: AppTextStyles.regular12(context),
+                              ),
+                            ),
+                          ),
                         ),
 
                         Container(
@@ -65,9 +103,18 @@ class ProfileScreenBody extends StatelessWidget {
                           color: AppColors.grey40,
                         ),
 
-                        Text(
-                          S.of(context).medicalRecords,
-                          style: AppTextStyles.regular12(context),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              context.pushNamed(Routes.medicalRecords);
+                            },
+                            child: Center(
+                              child: Text(
+                                S.of(context).medicalRecords,
+                                style: AppTextStyles.regular12(context),
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -89,11 +136,7 @@ class ProfileScreenBody extends StatelessWidget {
                   iconColor: AppColors.secondarySurfaceGreen,
                   title: S.of(context).myTestDiagnostic,
                 ),
-                BuildProfileItem(
-                  icon: Assets.svgWallet,
-                  iconColor: AppColors.secondarySurfaceRed,
-                  title: S.of(context).paymentMethods,
-                ),
+
               ],
             ),
           ),

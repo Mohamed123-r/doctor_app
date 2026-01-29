@@ -13,11 +13,16 @@ class DioFactory {
     Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
-      dio = Dio();
-      dio!
-        ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut;
-      addDioHeaders();
+      dio = Dio(
+        BaseOptions(
+          connectTimeout: timeOut,
+          receiveTimeout: timeOut,
+          headers: {
+            'Accept': 'application/json',
+          },
+        ),
+      );
+
       addDioInterceptor();
       return dio!;
     } else {
@@ -25,21 +30,23 @@ class DioFactory {
     }
   }
 
-  static void addDioHeaders() async {
-    dio?.options.headers = {
-      'Accept': 'application/json',
-      'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
-    };
-  }
-
-  static void setTokenIntoHeaderAfterLogin(String token) {
-    dio?.options.headers = {
-      'Authorization': 'Bearer $token',
-    };
-  }
-
   static void addDioInterceptor() {
+    dio?.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          final token = await SharedPrefHelper.getSecuredString(
+            SharedPrefKeys.userToken,
+          );
+
+          if (token.isNotEmpty) {
+            options.headers['Authorization'] = 'Bearer $token';
+          }
+
+          return handler.next(options);
+        },
+      ),
+    );
+
     dio?.interceptors.add(
       PrettyDioLogger(
         requestBody: true,
@@ -47,5 +54,10 @@ class DioFactory {
         responseHeader: true,
       ),
     );
+  }
+
+  /// optional: reset dio on logout
+  static void clearDio() {
+    dio = null;
   }
 }

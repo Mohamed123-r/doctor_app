@@ -19,6 +19,7 @@ import '../../features/appointment/presentation/reschedule_screen/ui/reschedule_
 import '../../features/appointment/presentation/reschedule_screen/ui/reschedule_success_screen.dart';
 import '../../features/home/presentation/home/cubits/specializations_cubit.dart';
 import '../../features/profile/presentation/FAQ_screen/ui/FAQ_screen.dart';
+import '../../features/profile/presentation/medical_records_screen/ui/medical_records_screen.dart';
 
 class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -48,9 +49,10 @@ class AppRouter {
           ),
         );
       case Routes.doctorDetails:
-        return MaterialPageRoute(builder: (_) => DoctorDetailsScreen(
-          doctor: settings.arguments  as dynamic,
-        ));
+        return MaterialPageRoute(
+          builder: (_) =>
+              DoctorDetailsScreen(doctor: settings.arguments as dynamic),
+        );
       case Routes.profile:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
       case Routes.profileInformation:
@@ -63,6 +65,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LanguageScreen());
       case Routes.myAppointment:
         return MaterialPageRoute(builder: (_) => MyAppointmentScreen());
+      case Routes.medicalRecords:
+        return MaterialPageRoute(builder: (_) => MedicalRecordsScreen());
       case Routes.reschedule:
         return MaterialPageRoute(builder: (_) => RescheduleScreen());
       case Routes.successReschedule:
