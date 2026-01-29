@@ -112,7 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "governrate": MessageLookupByLibrary.simpleMessage("المحافظة: "),
-    "hiOmar": MessageLookupByLibrary.simpleMessage("مرحبًا، عمر!"),
+    "hiOmar": MessageLookupByLibrary.simpleMessage("مرحبًا، "),
     "howAreYouToday": MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
     "howDoIMakeAnAppointmentWithADoctor": MessageLookupByLibrary.simpleMessage(
       "كيف يمكنني حجز موعد مع طبيب؟",
