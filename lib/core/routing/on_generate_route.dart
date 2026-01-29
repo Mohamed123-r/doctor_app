@@ -7,7 +7,7 @@ import 'package:doctor_app/features/logIn/presentation/cubits/login_cubit.dart';
 import 'package:doctor_app/features/logIn/presentation/login_screen.dart';
 import 'package:doctor_app/features/onBoarding/presentation/on_boarding_screen.dart';
 import 'package:doctor_app/features/profile/presentation/language_screen/ui/language_screen.dart';
-import 'package:doctor_app/features/profile/presentation/profile_informaion_screen/ui/profile_information_screen.dart';
+import 'package:doctor_app/features/profile/presentation/profile_information_screen/presentation/ui/profile_information_screen.dart';
 import 'package:doctor_app/features/profile/presentation/profile_screen/ui/profile_screen.dart';
 import 'package:doctor_app/features/profile/presentation/setting_screen/ui/setting_screen.dart';
 import 'package:doctor_app/features/search/presentation/search_screen/ui/search_screen.dart';

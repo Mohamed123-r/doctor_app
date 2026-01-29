@@ -2,10 +2,9 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/app_text_field.dart';
 import 'package:doctor_app/generated/assets.dart';
+import 'package:doctor_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../../../generated/l10n.dart';
 
 class ProfileInformationScreenBody extends StatelessWidget {
   const ProfileInformationScreenBody({super.key});
@@ -52,13 +51,13 @@ class ProfileInformationScreenBody extends StatelessWidget {
             SizedBox(height: 44),
             AppTextField(
               hintText: S.of(context).fullName,
-              initialValue: 'Omar Ahmed',
+              initialValue: 'Mohamed',
               keyboardType: TextInputType.name,
             ),
             SizedBox(height: 16),
             AppTextField(
               hintText: S.of(context).emailAddress,
-              initialValue: 'omarahmed14@gmail.com',
+              initialValue: 'omohamed8828@gmail.com',
               keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(height: 16),
