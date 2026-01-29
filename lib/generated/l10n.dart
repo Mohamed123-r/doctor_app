@@ -721,9 +721,9 @@ class S {
     return Intl.message('Find Nearby', name: 'findNearby', desc: '', args: []);
   }
 
-  /// `Hi, Omar!`
+  /// `Hi, `
   String get hiOmar {
-    return Intl.message('Hi, Omar!', name: 'hiOmar', desc: '', args: []);
+    return Intl.message('Hi, ', name: 'hiOmar', desc: '', args: []);
   }
 
   /// `How Are you Today?`

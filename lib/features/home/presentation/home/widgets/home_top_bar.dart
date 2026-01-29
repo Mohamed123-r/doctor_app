@@ -1,3 +1,5 @@
+import 'package:doctor_app/core/helpers/constants.dart';
+import 'package:doctor_app/core/helpers/shared_pref_helper.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
@@ -6,8 +8,29 @@ import 'package:flutter/material.dart';
 
 import '../../../../../generated/l10n.dart';
 
-class HomeTopBar extends StatelessWidget {
+class HomeTopBar extends StatefulWidget {
   const HomeTopBar({super.key});
+
+  @override
+  State<HomeTopBar> createState() => _HomeTopBarState();
+}
+
+class _HomeTopBarState extends State<HomeTopBar> {
+  String userName = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final name = await SharedPrefHelper.getString(SharedPrefKeys.userName);
+
+    setState(() {
+      userName = name;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +43,7 @@ class HomeTopBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                S.of(context).hiOmar,
+                "${S.of(context).hiOmar} $userName !",
                 style: AppTextStyles.bold18(
                   context,
                 ).copyWith(color: AppColors.grey100),

@@ -116,7 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "governrate": MessageLookupByLibrary.simpleMessage("governrate: "),
-    "hiOmar": MessageLookupByLibrary.simpleMessage("Hi, Omar!"),
+    "hiOmar": MessageLookupByLibrary.simpleMessage("Hi, "),
     "howAreYouToday": MessageLookupByLibrary.simpleMessage(
       "How Are you Today?",
     ),
