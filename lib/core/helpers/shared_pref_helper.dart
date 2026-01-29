@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -42,6 +44,16 @@ class SharedPrefHelper {
     }
   }
 
+  static Future<void> setMap(String key, Map<String, dynamic> value) async {
+    final jsonString = jsonEncode(value);
+    await setData(key, jsonString);
+  }
+
+  static Future<Map<String, dynamic>> getMap(String key) async {
+    final jsonString = await getString(key);
+    if (jsonString.isEmpty) return {};
+    return jsonDecode(jsonString);
+  }
   /// Gets a bool value from SharedPreferences with given [key].
   static Future<bool> getBool(String key) async {
     debugPrint('SharedPrefHelper : getBool with key : $key');

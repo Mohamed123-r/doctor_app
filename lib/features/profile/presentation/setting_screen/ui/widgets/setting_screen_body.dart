@@ -6,6 +6,8 @@ import 'package:doctor_app/core/theming/app_colors.dart';
 import 'package:doctor_app/core/theming/app_text_styles.dart';
 import 'package:doctor_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import '../../../../../../core/helpers/constants.dart';
+import '../../../../../../core/networking/dio_factory.dart';
 import '../../../../../../generated/l10n.dart';
 import 'build_setting_item.dart';
 
@@ -82,10 +84,13 @@ class SettingScreenBody extends StatelessWidget {
                 massage: S.of(context).logoutSuccessful,
               );
               await SharedPrefHelper.clearAllData();
+              await SharedPrefHelper.clearAllSecuredData();
+              DioFactory.clearDio();
               context.pushNamedAndRemoveUntil(
                 Routes.onboarding,
                 (route) => false,
               );
+              isLoggedInUser = false;
             },
             child: Text(
               S.of(context).logout,

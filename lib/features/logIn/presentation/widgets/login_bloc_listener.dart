@@ -31,6 +31,14 @@ class LoginBlocListener extends StatelessWidget {
               SharedPrefKeys.userToken,
               data.data.token,
             );
+            await SharedPrefHelper.setData(
+              SharedPrefKeys.userName,
+              data.data.userName,
+            );
+            await SharedPrefHelper.setSecuredString(
+              SharedPrefKeys.userEmail,
+              context.read<LoginCubit>().emailController.text.trim(),
+            );
             context.pushNamed(Routes.home);
           },
           error: (error) {
