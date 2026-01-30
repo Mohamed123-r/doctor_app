@@ -9,6 +9,8 @@ import 'package:doctor_app/features/sign_up/data/models/sign_up_request_body.dar
 import 'package:doctor_app/features/sign_up/data/models/sign_up_response.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../features/search/data/model/doctor_search_response.dart';
+
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
@@ -26,6 +28,9 @@ abstract class ApiService {
 
   @POST(ApiConstants.updateProfile)
   Future<UpdateProfileResponse> updateProfile(
-      @Body() UpdateProfileRequestBody updateProfileRequestBody
-      );
+    @Body() UpdateProfileRequestBody updateProfileRequestBody,
+  );
+
+  @GET(ApiConstants.doctorSearch)
+  Future<DoctorSearchResponse> searchDoctors(@Query('name') String name);
 }

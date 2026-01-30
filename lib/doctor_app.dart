@@ -35,7 +35,7 @@ class DoctorApp extends StatelessWidget {
               scaffoldBackgroundColor: AppColors.backgroundWhite,
               fontFamily: locale == Locale('en') ? 'Inter' : 'Cairo',
             ),
-            initialRoute: isLoggedInUser ? Routes.home : Routes.onboarding,
+            initialRoute: isLoggedInUser ? Routes.search : Routes.onboarding,
             onGenerateRoute: appRouter.onGenerateRoute,
           );
         },

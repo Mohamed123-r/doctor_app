@@ -1,5 +1,5 @@
 import 'package:doctor_app/core/helpers/constants.dart';
-import 'package:doctor_app/core/helpers/custom_error.dart';
+import 'package:doctor_app/core/helpers/custom_Dialog.dart';
 import 'package:doctor_app/core/helpers/navigation_extension.dart';
 import 'package:doctor_app/core/helpers/shared_pref_helper.dart';
 import 'package:doctor_app/core/routing/routes.dart';

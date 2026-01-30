@@ -61,6 +61,7 @@ Future<void> loadingDialog(BuildContext context) async {
 Future<void> warningDialog(
   BuildContext context, {
   required String massage,
+  required VoidCallback onPressed,
 }) async {
   await AwesomeDialog(
     context: context,
@@ -71,9 +72,7 @@ Future<void> warningDialog(
     btnOk: AppButton(
       // isMinWidth: true,
       title: S.of(context).ok,
-      onPressed: () {
-        Navigator.pop(context);
-      },
+      onPressed:onPressed,
     ),
     btnCancel: AppButton(
       // isMinWidth: true,

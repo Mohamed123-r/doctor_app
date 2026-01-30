@@ -1095,6 +1095,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Recent Search`
+  String get recentSearch {
+    return Intl.message(
+      'Recent Search',
+      name: 'recentSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to clear all recent searches?`
+  String get areYouSureYouWantToClearAllRecentSearches {
+    return Intl.message(
+      'Are you sure you want to clear all recent searches?',
+      name: 'areYouSureYouWantToClearAllRecentSearches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear All History`
+  String get clearAllHistory {
+    return Intl.message(
+      'Clear All History',
+      name: 'clearAllHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No recent searches.`
+  String get noRecentSearches {
+    return Intl.message(
+      'No recent searches.',
+      name: 'noRecentSearches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No doctors found matching your search.`
+  String get noDoctorsFoundMatchingYourSearch {
+    return Intl.message(
+      'No doctors found matching your search.',
+      name: 'noDoctorsFoundMatchingYourSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `founds`
+  String get founds {
+    return Intl.message('founds', name: 'founds', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -9,6 +9,8 @@ import 'package:doctor_app/features/sign_up/presentation/cubit/sign_up_cubit.dar
 import 'package:get_it/get_it.dart';
 
 import '../../features/home/presentation/home/cubits/specializations_cubit.dart';
+import '../../features/search/data/repository/doctor_search_repo.dart';
+import '../../features/search/presentation/search_screen/logic/search_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -32,4 +34,9 @@ Future<void> setupGetIt() async {
   getIt.registerFactory<SpecializationsCubit>(
     () => SpecializationsCubit(specializationsRepo: getIt()),
   );
+  //search
+  getIt.registerLazySingleton<DoctorRepo>(
+    () => DoctorRepo(apiService: getIt()),
+  );
+  getIt.registerFactory<SearchCubit>(() => SearchCubit(doctorRepo: getIt()));
 }

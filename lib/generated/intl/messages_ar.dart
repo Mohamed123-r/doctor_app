@@ -50,6 +50,10 @@ class MessageLookup extends MessageLookupByLibrary {
           "تستغرق المواعيد عادة من 15 إلى 30 دقيقة، وقد تختلف حسب الحالة.",
         ),
     "arab": MessageLookupByLibrary.simpleMessage("العربية"),
+    "areYouSureYouWantToClearAllRecentSearches":
+        MessageLookupByLibrary.simpleMessage(
+          "هل أنت متأكد أنك تريد حذف جميع عمليات البحث الأخيرة؟",
+        ),
     "arrive1520MinutesEarlyToCompleteAnyPaperwork":
         MessageLookupByLibrary.simpleMessage(
           "يُفضل الوصول قبل 15-20 دقيقة لاستكمال أي أوراق.",
@@ -76,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelAppointment": MessageLookupByLibrary.simpleMessage("إلغاء الموعد"),
     "cancelled": MessageLookupByLibrary.simpleMessage("الملغاة"),
     "city": MessageLookupByLibrary.simpleMessage("المدينة: "),
+    "clearAllHistory": MessageLookupByLibrary.simpleMessage(
+      "مسح السجل بالكامل",
+    ),
     "comingSoon": MessageLookupByLibrary.simpleMessage("قريبًا"),
     "completed": MessageLookupByLibrary.simpleMessage("المكتملة"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
@@ -109,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
     "findNearby": MessageLookupByLibrary.simpleMessage("ابحث بالقرب منك"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "founds": MessageLookupByLibrary.simpleMessage("نتيجة"),
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "governrate": MessageLookupByLibrary.simpleMessage("المحافظة: "),
@@ -153,6 +161,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "myTestDiagnostic": MessageLookupByLibrary.simpleMessage(
       "الفحوصات والتحاليل",
     ),
+    "noDoctorsFoundMatchingYourSearch": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد أطباء مطابقون لبحثك.",
+    ),
+    "noRecentSearches": MessageLookupByLibrary.simpleMessage(
+      "لا توجد عمليات بحث سابقة.",
+    ),
     "ok": MessageLookupByLibrary.simpleMessage("موافق"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
@@ -196,6 +210,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "profileInformation": MessageLookupByLibrary.simpleMessage(
       "معلومات الملف الشخصي",
+    ),
+    "recentSearch": MessageLookupByLibrary.simpleMessage(
+      "عمليات البحث الأخيرة",
     ),
     "recommendationDoctor": MessageLookupByLibrary.simpleMessage(
       "أطباء موصى بهم",
