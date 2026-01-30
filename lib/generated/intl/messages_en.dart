@@ -48,6 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
           "Appointments typically last 15-30 minutes, but may vary based on your needs.",
         ),
     "arab": MessageLookupByLibrary.simpleMessage("Arab"),
+    "areYouSureYouWantToClearAllRecentSearches":
+        MessageLookupByLibrary.simpleMessage(
+          "Are you sure you want to clear all recent searches?",
+        ),
     "arrive1520MinutesEarlyToCompleteAnyPaperwork":
         MessageLookupByLibrary.simpleMessage(
           "Arrive 15-20 minutes early to complete any paperwork.",
@@ -78,6 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "city": MessageLookupByLibrary.simpleMessage("city: "),
+    "clearAllHistory": MessageLookupByLibrary.simpleMessage(
+      "Clear All History",
+    ),
     "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon"),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -113,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "faq": MessageLookupByLibrary.simpleMessage("FAQ"),
     "findNearby": MessageLookupByLibrary.simpleMessage("Find Nearby"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "founds": MessageLookupByLibrary.simpleMessage("founds"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "governrate": MessageLookupByLibrary.simpleMessage("governrate: "),
@@ -159,6 +167,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "myTestDiagnostic": MessageLookupByLibrary.simpleMessage(
       "My Test & Diagnostic",
     ),
+    "noDoctorsFoundMatchingYourSearch": MessageLookupByLibrary.simpleMessage(
+      "No doctors found matching your search.",
+    ),
+    "noRecentSearches": MessageLookupByLibrary.simpleMessage(
+      "No recent searches.",
+    ),
     "ok": MessageLookupByLibrary.simpleMessage("Ok"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
@@ -203,6 +217,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profileInformation": MessageLookupByLibrary.simpleMessage(
       "Profile Information",
     ),
+    "recentSearch": MessageLookupByLibrary.simpleMessage("Recent Search"),
     "recommendationDoctor": MessageLookupByLibrary.simpleMessage(
       "Recommendation Doctor",
     ),

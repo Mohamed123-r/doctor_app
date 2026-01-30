@@ -20,6 +20,7 @@ import '../../features/appointment/presentation/reschedule_screen/ui/reschedule_
 import '../../features/home/presentation/home/cubits/specializations_cubit.dart';
 import '../../features/profile/presentation/FAQ_screen/ui/FAQ_screen.dart';
 import '../../features/profile/presentation/medical_records_screen/ui/medical_records_screen.dart';
+import '../../features/search/presentation/search_screen/logic/search_cubit.dart';
 
 class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
@@ -72,7 +73,10 @@ class AppRouter {
       case Routes.successReschedule:
         return MaterialPageRoute(builder: (_) => RescheduleSuccessScreen());
       case Routes.search:
-        return MaterialPageRoute(builder: (_) => SearchScreen());
+        return MaterialPageRoute(builder: (_) => BlocProvider(
+          create: (context) => getIt<SearchCubit>(),
+          child: SearchScreen(),
+        ));
       default:
         return null;
     }

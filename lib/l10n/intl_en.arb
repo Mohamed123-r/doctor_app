@@ -125,5 +125,11 @@
   "pleaseEnterYourFullName": "Please enter your full name",
   "pleaseEnterAValidName": "Please enter a valid name",
   "pleaseEnterYourAge": "Please enter your age",
-  "pleaseEnterAValidAge": "Please enter a valid age"
+  "pleaseEnterAValidAge": "Please enter a valid age",
+  "recentSearch": "Recent Search",
+  "areYouSureYouWantToClearAllRecentSearches": "Are you sure you want to clear all recent searches?",
+  "clearAllHistory": "Clear All History",
+  "noRecentSearches": "No recent searches.",
+  "noDoctorsFoundMatchingYourSearch": "No doctors found matching your search.",
+  "founds": "founds"
 }

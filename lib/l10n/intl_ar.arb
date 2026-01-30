@@ -125,5 +125,11 @@
   "pleaseEnterYourFullName": "يرجى إدخال الاسم الكامل",
   "pleaseEnterAValidName": "يرجى إدخال اسم صالح",
   "pleaseEnterYourAge": "يرجى إدخال العمر",
-  "pleaseEnterAValidAge": "يرجى إدخال عمر صالح"
+  "pleaseEnterAValidAge": "يرجى إدخال عمر صالح",
+  "recentSearch": "عمليات البحث الأخيرة",
+  "areYouSureYouWantToClearAllRecentSearches": "هل أنت متأكد أنك تريد حذف جميع عمليات البحث الأخيرة؟",
+  "clearAllHistory": "مسح السجل بالكامل",
+  "noRecentSearches": "لا توجد عمليات بحث سابقة.",
+  "noDoctorsFoundMatchingYourSearch": "لا يوجد أطباء مطابقون لبحثك.",
+  "founds": "نتيجة"
 }

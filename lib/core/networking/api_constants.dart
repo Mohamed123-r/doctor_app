@@ -5,6 +5,7 @@ class ApiConstants {
   static const String signUp = "auth/register";
   static const String specializationHome = "specialization/index";
   static const String updateProfile = "user/update";
+  static const String doctorSearch = "/doctor/doctor-search";
 }
 
 class ApiErrors {
